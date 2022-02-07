@@ -1,6 +1,6 @@
-import SomeNewName from "./SomeNewName";
+import CocktailDataContext from "./CocktailDataContext";
 
-const SomeNewNameProvider = ({ children }) => {
+const CocktailDataContextProvider = ({ children }) => {
   const categoriesList = [
     {
       id: 1,
@@ -71,10 +71,10 @@ const SomeNewNameProvider = ({ children }) => {
   ];
 
   return (
-    <SomeNewName.Provider value={{ categoriesList }}>
+    <CocktailDataContext.Provider value={{ categoriesList }}>
       {children}
-    </SomeNewName.Provider>
+    </CocktailDataContext.Provider>
   );
 };
 
-export default SomeNewNameProvider;
+export default CocktailDataContextProvider;

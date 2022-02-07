@@ -1,4 +1,4 @@
-import CocktailDataContext from "./cocktailDataContext";
+import CocktailDataContext from "./minusCocktailDataContext";
 
 const CocktailDataContextProvider = ({ children }) => {
   const categoriesList = [

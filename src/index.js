@@ -3,13 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import CocktailDataContextProvider from "./contexts/CocktailDataContextProvider";
+import SomeNewNameProvider from "./contexts/SomeNewNameProvider";
 
 ReactDOM.render(
   <React.StrictMode>
-    <CocktailDataContextProvider>
+    <SomeNewNameProvider>
       <App />
-    </CocktailDataContextProvider>
+    </SomeNewNameProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

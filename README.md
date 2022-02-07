@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+## RESPONSIBILITIES PLANIFICATION
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Components
 
-## Available Scripts
+- App
 
-In the project directory, you can run:
+  - Render the HomePage, MyBarPage, FormMyBarPage and CategoryPage
+  - Route every page so the app works as a Single Page Application
 
-### `npm start`
+- HomePage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  - Render a list of categories and a button
+  - Display a header, navigation menu, footer and a banner
+  - Give categories a function to execute on click
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- MyBarPage
 
-### `npm test`
+  - Render cocktails from the received lists
+  - Display a header, navigation menu and footer
+  - Give Cocktail component a function to execute.
+  - Give Cocktail component a function to pass it to its inner Button
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- FormMyBarPage
 
-### `npm run build`
+  - Render CocktailForm and pass it a function onChange and a function on submit
+  - Display a header, navigation menu and footer
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- CategoryPage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - Render cocktails from the received lists
+  - Display a header, navigation menu and footer
+  - Give Cocktail component a function to execute
+  - Give Cocktail component a function to pass it to its inner Button
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- CocktailCategory (card)
 
-### `npm run eject`
+  - Display text and picture received
+  - Execute a received action on click
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Cocktail (card)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  - Display text, picture and icon received
+  - Execute a received action on click
+  - Render a favourite button and pass a received action as its onClick
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- CocktailDetails
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  - Display information received, that will be the cocktail name, picture, category, list of ingredients and measures, and preparation instructions
 
-## Learn More
+- CocktailForm
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  - Display list of inputs, labels, a checkbox, and a submit button
+  - Execute a received function on input changes
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Button
+  - Display received text
+  - Execute a received function when clicked
 
-### Code Splitting
+# Data
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Categories List
 
-### Analyzing the Bundle Size
+- Cocktails List (outer API)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  - Update elements in the list
 
-### Making a Progressive Web App
+- Cocktails List (local API)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  - Create/Add elements to the list
+  - Modify an element in the list
+  - Delete an element from the list
+  - Update elements in the list
 
-### Advanced Configuration
+- Cocktail
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  - Update the element to a new one (or create if it wasn't already)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+All of the above goes into a context.

@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 const Footer = () => {
   return (
     <ul className="links">

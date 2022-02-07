@@ -4,31 +4,28 @@
 
 - App
 
-  - Render the HomePage, MyBarPage, FormMyBarPage and CategoryPage
+  - Render the Header, Navigation, Footer, HomePage, MyBarPage, FormMyBarPage and CategoryPage components
   - Route every page so the app works as a Single Page Application
 
 - HomePage
 
   - Render a list of categories and a button
-  - Display a header, navigation menu, footer and a banner
+  - Display a banner
   - Give categories a function to execute on click
 
 - MyBarPage
 
   - Render cocktails from the received lists
-  - Display a header, navigation menu and footer
   - Give Cocktail component a function to execute.
   - Give Cocktail component a function to pass it to its inner Button
 
 - FormMyBarPage
 
   - Render CocktailForm and pass it a function onChange and a function on submit
-  - Display a header, navigation menu and footer
 
 - CategoryPage
 
   - Render cocktails from the received lists
-  - Display a header, navigation menu and footer
   - Give Cocktail component a function to execute
   - Give Cocktail component a function to pass it to its inner Button
 
@@ -53,8 +50,20 @@
   - Execute a received function on input changes
 
 - Button
+
   - Display received text
   - Execute a received function when clicked
+
+- Header
+
+  - Display the header banner
+
+- Navigation
+
+  - Display the navigation menu items
+
+- Footer
+  - Display the list of elements that needs to be in the footer
 
 # Data
 

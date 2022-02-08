@@ -1,0 +1,73 @@
+.links {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 2px solid rgb(170, 170, 170);
+  width: 80vw;
+  margin: 0;
+  margin-left: 10vw;
+  padding: 0;
+  height: 80px;
+  padding-top: 10px;
+  font-size: 13px;
+}
+
+.social-media {
+  display: flex;
+}
+
+.links__home {
+  font-family: "Sacramento", cursive;
+  font-size: 40px;
+}
+
+.links li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+.social-media {
+  margin: 0;
+  padding: 0;
+}
+
+.social-media li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.links__join {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  width: 180px;
+  height: 35px;
+}
+
+.line {
+  height: 60%;
+  border-left: 2px solid rgb(170, 170, 170);
+}
+
+.information {
+  padding: 0;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    display: none;
+  }
+}

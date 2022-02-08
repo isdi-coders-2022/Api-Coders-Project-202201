@@ -4,7 +4,7 @@ import CocktailDataContext from "../store/contexts/CocktailDataContext";
 
 const useAPI = () => {
   const apiURL =
-    "http://www.thecocktaildb.com/api/json/v1/1/filter.php?c=cocoa";
+    "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=cocoa";
   const { dispatch } = useContext(CocktailDataContext);
 
   const loadCocktailsAPI = useCallback(async () => {

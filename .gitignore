@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-.cove
+.coverage
 
 # production
 /build

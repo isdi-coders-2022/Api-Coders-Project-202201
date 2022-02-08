@@ -11,7 +11,6 @@ function App() {
         <Navigation />
       </main>
       <Footer />
-      <CategoryItem></CategoryItem>
     </div>
   );
 }

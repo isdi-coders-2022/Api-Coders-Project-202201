@@ -11,7 +11,7 @@ const SimpleButton = styled.button`
 const Button = ({ text, action }) => {
   return (
     <SimpleButton className="simple-button" onClick={action}>
-      Let's see
+      {text}
     </SimpleButton>
   );
 };

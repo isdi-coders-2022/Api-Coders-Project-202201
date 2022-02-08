@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders consistently , equal to the snapshot 1`] = `
+<header
+  className="sc-bdvvtL jsna-dJ"
+>
+  <h1
+    className="sc-gsDKAQ fHUoGR header__title"
+  >
+    Cocktails 
+    <i
+      className="fas fa-glass-martini-alt title__icon"
+    />
+  </h1>
+</header>
+`;

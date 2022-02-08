@@ -1,0 +1,29 @@
+.cocktail-description {
+  font-family: Recursive;
+  margin-bottom: 100px;
+}
+
+.image-container {
+  width: 100vw;
+  height: 200px;
+  overflow: hidden;
+}
+
+.cocktail-description__image {
+  width: 100vw;
+}
+
+.cocktail-description__name {
+  font-size: 24px;
+  font-family: Piazzolla;
+}
+
+.description-container {
+  padding-left: 10px;
+  padding-right: 20px;
+  font-size: 15px;
+}
+
+.cocktail-description__name {
+  padding-left: 20px;
+}

@@ -9,10 +9,7 @@ const useAPI = () => {
 
   const loadCocktailsAPI = useCallback(async () => {
     try {
-      const response = await fetch(apiURL, {
-        method: "GET",
-        mode: "no-cors",
-      });
+      const response = await fetch(apiURL);
       const cocktails = await response.json();
       dispatch(loadCocktailsAction(cocktails));
     } catch (error) {

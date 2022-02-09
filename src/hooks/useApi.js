@@ -12,9 +12,7 @@ const useAPI = () => {
       const response = await fetch(apiURL);
       const cocktails = await response.json();
       dispatch(loadCocktailsAction(cocktails));
-    } catch (error) {
-      alert("Error at load");
-    }
+    } catch (error) {}
   }, [apiURL, dispatch]);
 
   return { loadCocktailsAPI };

@@ -1,3 +1,5 @@
+import { useReducer } from "react";
+import cocktailsReducer from "../reducers/cocktailsReducer";
 import CocktailDataContext from "./CocktailDataContext";
 
 const CocktailDataContextProvider = ({ children }) => {
@@ -70,8 +72,12 @@ const CocktailDataContextProvider = ({ children }) => {
     },
   ];
 
+  const [cocktails, dispatch] = useReducer(cocktailsReducer, []);
+
   return (
-    <CocktailDataContext.Provider value={{ categoriesList }}>
+    <CocktailDataContext.Provider
+      value={{ categoriesList, cocktails, dispatch }}
+    >
       {children}
     </CocktailDataContext.Provider>
   );

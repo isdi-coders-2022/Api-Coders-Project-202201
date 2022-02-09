@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Header from "./Header";
+import reactTestRenderer from "react-test-renderer";
 
 describe("Given a Header component", () => {
   describe("When it is rendered", () => {
@@ -13,4 +14,10 @@ describe("Given a Header component", () => {
       expect(title).toBeInTheDocument();
     });
   });
+});
+
+it("renders consistently , equal to the snapshot", () => {
+  const theHeader = reactTestRenderer.create(<Header />);
+
+  expect(theHeader.toJSON()).toMatchSnapshot();
 });

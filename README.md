@@ -1,87 +1,32 @@
-## RESPONSIBILITIES PLANIFICATION
+## Cocktails the drink experience
 
-# Components
+# Greetings
 
-- App
+Hellow there code enthusiast , this is the official repo of
+Cocktails "The drinking experience".
 
-  - Render the Header, Navigation, Footer, HomePage, MyBarPage, FormMyBarPage and CategoryPage components
-  - Route every page so the app works as a Single Page Application
+The main idea of this project is to give options to the user
+to explore all kinds of drinks and try out new ones.
 
-- HomePage
+# Ussage
 
-  - Render a list of categories and a button
-  - Display a banner
-  - Give categories a function to execute on click
+In the homepage you can see 11 categories to narrow your search and
+find faster your dream drink.
 
-- MyBarPage
+You can add your favorite drinks to "My Bar" page by simply touching the star icon, and your your own in the form page.
 
-  - Render cocktails from the received lists
-  - Give Cocktail component a function to execute.
-  - Give Cocktail component a function to pass it to its inner Button
+# Tech stack
 
-- FormMyBarPage
+Being this webpage a React-based project we don't use extra technologies to build the webpage.It's made with flux architecture , react native hooks and react contexts.
 
-  - Render CocktailForm and pass it a function onChange and a function on submit
+We used the technologies listed before because of the high demand in the
+industry and their advantages managing information in comparison to an MVC.
 
-- CategoryPage
+To run the project it's as easy as clone this repo and install the npm packages.
 
-  - Render cocktails from the received lists
-  - Give Cocktail component a function to execute
-  - Give Cocktail component a function to pass it to its inner Button
+# Collaborators
 
-- CocktailCategory (card)
-
-  - Display text and picture received
-  - Execute a received action on click
-
-- Cocktail (card)
-
-  - Display text, picture and icon received
-  - Execute a received action on click
-  - Render a favourite button and pass a received action as its onClick
-
-- CocktailDetails
-
-  - Display information received, that will be the cocktail name, picture, category, list of ingredients and measures, and preparation instructions
-
-- CocktailForm
-
-  - Display list of inputs, labels, a checkbox, and a submit button
-  - Execute a received function on input changes
-
-- Button
-
-  - Display received text
-  - Execute a received function when clicked
-
-- Header
-
-  - Display the header banner
-
-- Navigation
-
-  - Display the navigation menu items
-
-- Footer
-  - Display the list of elements that needs to be in the footer
-
-# Data
-
-- Categories List
-
-- Cocktails List (outer API)
-
-  - Update elements in the list
-
-- Cocktails List (local API)
-
-  - Create/Add elements to the list
-  - Modify an element in the list
-  - Delete an element from the list
-  - Update elements in the list
-
-- Cocktail
-
-  - Update the element to a new one (or create if it wasn't already)
-
-All of the above goes into a context.
+This project it's a collaboration between
+-David Pegueroles
+-Inna Iazovskaia
+-Emiliano Polanco

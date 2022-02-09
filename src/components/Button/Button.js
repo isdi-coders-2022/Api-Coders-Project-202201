@@ -7,11 +7,29 @@ const SimpleButton = styled.button`
   width: 100px;
   border: none;
 `;
-const Button = ({ text, action }) => {
+
+const ButtonStar = styled.button`
+  border: none;
+  width: 33.33px;
+  height: 31.67px;
+  font-size: 31px;
+  text-align: center;
+  padding: 0;
+  color: #fff;
+  background-color: transparent;
+`;
+
+const Button = ({ text, action, type }) => {
   return (
-    <SimpleButton className="simple-button" onClick={action}>
-      {text}
-    </SimpleButton>
+    <>
+      {type === "star" && <ButtonStar onClick={action}>{text}</ButtonStar>}
+
+      {type === "simple" && (
+        <SimpleButton className="simple-button" onClick={action}>
+          {text}
+        </SimpleButton>
+      )}
+    </>
   );
 };
 

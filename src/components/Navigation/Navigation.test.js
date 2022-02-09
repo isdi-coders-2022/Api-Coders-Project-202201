@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import TestRenderer from "react-test-renderer";
 import Navigation from "./Navigation";
 
 describe("Given a Navigation component", () => {
@@ -15,6 +16,14 @@ describe("Given a Navigation component", () => {
       expect(navigationHome).toBeInTheDocument();
       expect(navigationMyBar).toBeInTheDocument();
       expect(navigationCreateMyCocktail).toBeInTheDocument();
+    });
+  });
+
+  describe("When", () => {
+    test("Then", () => {
+      const renderedNavigation = TestRenderer.create(<Navigation />);
+
+      expect(renderedNavigation).toMatchSnapshot();
     });
   });
 });

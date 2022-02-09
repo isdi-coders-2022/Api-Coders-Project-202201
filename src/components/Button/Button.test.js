@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Button from "./Button";
+import reactTestRenderer from "react-test-renderer";
 
 describe("Given a Button component", () => {
   describe("When it's rendered", () => {
@@ -24,6 +25,14 @@ describe("Given a Button component", () => {
       renderedButton.click();
 
       expect(calledFunction).toHaveBeenCalled();
+    });
+  });
+
+  describe("When it's rendered constantly", () => {
+    describe("Then it should be equal to the snapshot", () => {
+      const theButton = reactTestRenderer.create(<Button />);
+
+      expect(theButton.toJSON()).toMatchSnapshot();
     });
   });
 });

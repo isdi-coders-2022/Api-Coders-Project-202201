@@ -1,5 +1,4 @@
 import { loadCocktailsAction } from "./actionsCreators";
-import actionsTypes from "./actionsTypes";
 
 describe("Given a cocktailsReducer function", () => {
   describe("When it receives 'Absinthe #2' and 'Amaretto Liqueur' objects", () => {
@@ -19,7 +18,7 @@ describe("Given a cocktailsReducer function", () => {
         },
       ];
       const expectedAction = {
-        type: actionsTypes.loadCocktails,
+        type: "load-cocktails",
         cocktails,
       };
 

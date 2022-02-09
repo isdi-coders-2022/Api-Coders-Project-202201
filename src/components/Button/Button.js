@@ -7,7 +7,6 @@ const SimpleButton = styled.button`
   width: 100px;
   border: none;
 `;
-
 const Button = ({ text, action }) => {
   return (
     <SimpleButton className="simple-button" onClick={action}>

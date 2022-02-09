@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import cocktailsReducer from "../reducers/cocktailsReducer";
 import CocktailDataContext from "./CocktailDataContext";
 
@@ -7,7 +7,7 @@ const CocktailDataContextProvider = ({ children }) => {
     {
       id: 1,
       name: "Ordinary Drink",
-      altName: "Ordinary_Drink",
+      url: "Ordinary_Drink",
       src: "https://assets-prd.punchdrink.com/wp-content/uploads/2019/10/23100724/Article-Fifty-Fifty-50-50-Martini-Really-a-Martini-Cocktail.jpg",
     },
     {
@@ -72,11 +72,13 @@ const CocktailDataContextProvider = ({ children }) => {
     },
   ];
 
+  const [searchText, setSearchText] = useState("list.php?c=list");
+
   const [cocktails, dispatch] = useReducer(cocktailsReducer, []);
 
   return (
     <CocktailDataContext.Provider
-      value={{ categoriesList, cocktails, dispatch }}
+      value={{ categoriesList, cocktails, dispatch, searchText, setSearchText }}
     >
       {children}
     </CocktailDataContext.Provider>

@@ -32,7 +32,6 @@ describe("Given a Footer component", () => {
   describe("When it's rendered'", () => {
     test("Then it should always match this snapshot", () => {
       const theFooter = reactTestRenderer.create(<Footer />);
-
       expect(theFooter.toJSON()).toMatchSnapshot();
     });
   });

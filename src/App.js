@@ -2,15 +2,18 @@ import Header from "./components/Header/Header";
 import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
 import Button from "./components/Button/Button";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import useAPI from "./hooks/useApi";
+import CocktailDataContext from "./store/contexts/CocktailDataContext";
 
 function App() {
   const { loadCocktailsAPI } = useAPI();
 
+  const { searchText } = useContext(CocktailDataContext);
+
   useEffect(() => {
-    loadCocktailsAPI();
-  }, [loadCocktailsAPI]);
+    loadCocktailsAPI(searchText);
+  }, [searchText, loadCocktailsAPI]);
 
   return (
     <div className="App">

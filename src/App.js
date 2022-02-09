@@ -8,7 +8,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import CategoryPage from "./components/CategoryPage/CategoryPage";
 import CocktailDataContext from "./store/contexts/CocktailDataContext";
 
-
 function App() {
   const { loadCocktailsAPI } = useAPI();
 
@@ -19,9 +18,15 @@ function App() {
   }, [searchText, loadCocktailsAPI]);
 
   return (
-    <Routes>
-      <Route path="/" element={<Navigate to={"/home"} />} />
-      <Route path="components/CategoryPage" element={<CategoryPage />}></Route>
+    <>
+      <Routes>
+        <Route path="/" element={<Navigate to={"/home"} />} />
+        <Route
+          path="components/CategoryPage"
+          element={<CategoryPage />}
+        ></Route>
+      </Routes>
+
       <div className="App">
         <Header />
         <main>
@@ -30,7 +35,7 @@ function App() {
         <Footer />
         <Button />
       </div>
-    </Routes>
+    </>
   );
 }
 

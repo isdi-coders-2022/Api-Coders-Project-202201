@@ -19,8 +19,8 @@ describe("Given a Navigation component", () => {
     });
   });
 
-  describe("When", () => {
-    test("Then", () => {
+  describe("When it's rendered'", () => {
+    test("Then it should always match this snapshot", () => {
       const renderedNavigation = TestRenderer.create(<Navigation />);
 
       expect(renderedNavigation).toMatchSnapshot();

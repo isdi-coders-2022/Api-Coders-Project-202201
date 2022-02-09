@@ -22,7 +22,6 @@ function App() {
       <div className="App">
         <Header />
         <main>
-          <CocktailDetails />
           <Navigation />
         </main>
         <Footer />

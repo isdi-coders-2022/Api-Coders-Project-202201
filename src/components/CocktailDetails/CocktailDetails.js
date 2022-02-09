@@ -28,16 +28,9 @@ const DescriptionContainer = styled.div`
   font-size: 15px;
 `;
 
-const CocktailDetails = () => {
-  const name = "Margarita";
-  const imgURL =
-    "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg";
-  const category = "Ordinary Drink";
-  const ingredients = "vodka, salt";
-  const measure = "0/5, 0/5";
-  const instructions =
-    "Rub the rim of the glass with the lime slice to make the salt stick to it. Take care to moisten only the outer rim and sprinkle the salt on it. The salt should present to the lips of the imbiber and never mix into the cocktail. Shake the other ingredients with ice, then carefully pour into the glass.";
-
+const CocktailDetails = ({
+  cocktail: { name, imgURL, category, ingredients, measure, instructions },
+}) => {
   return (
     <CoctailDescription className="cocktail-description">
       <CocktailName className="cocktail-description__name">{name}</CocktailName>
@@ -49,7 +42,9 @@ const CocktailDetails = () => {
         />
       </ImageContainer>
       <DescriptionContainer className="description-container">
-        <p className="cocktail-description__category">Category: {category}</p>
+        <p className="cocktail-description__category">
+          {`Category: ${category}`}
+        </p>
         <p className="cocktail-description__ingredients">
           Ingredient: {ingredients} {measure}
         </p>

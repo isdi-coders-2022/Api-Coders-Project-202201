@@ -1,38 +1,50 @@
 import { render, screen } from "@testing-library/react";
 import Button from "./Button";
-import reactTestRenderer from "react-test-renderer";
+import userEvent from "@testing-library/user-event";
+import TestRenderer from "react-test-renderer";
 
 describe("Given a Button component", () => {
-  describe("When it's rendered", () => {
-    test("Then it should display the text passed", () => {
-      const expectedText = "Let's see";
-      render(<Button text={expectedText} />);
+  describe("When it receives 'star' as its type", () => {
+    test("Then it should render a button", () => {
+      const type = "star";
 
-      const renderedButton = screen.getByText(expectedText);
+      render(<Button type={type} />);
 
-      expect(renderedButton).toBeInTheDocument();
-    });
-  });
-  describe("When it get's passed a function", () => {
-    test("Then it should call that function", () => {
-      const defaultText = "Let's see";
-      const calledFunction = jest.fn();
+      const buttonRender = screen.getByRole("button");
 
-      render(<Button text={defaultText} action={calledFunction} />);
-
-      const renderedButton = screen.getByText(defaultText);
-
-      renderedButton.click();
-
-      expect(calledFunction).toHaveBeenCalled();
+      expect(buttonRender).toBeInTheDocument();
     });
   });
 
-  describe("When it's rendered constantly", () => {
-    describe("Then it should be equal to the snapshot", () => {
-      const theButton = reactTestRenderer.create(<Button />);
+  describe("When it receives 'simple' as its type", () => {
+    test("Then it should render a button", () => {
+      const type = "simple";
 
-      expect(theButton.toJSON()).toMatchSnapshot();
+      render(<Button type={type} />);
+
+      const buttonRender = screen.getByRole("button");
+
+      expect(buttonRender).toBeInTheDocument();
+    });
+  });
+
+  describe("When it receives an action and a click", () => {
+    test("Then it should execute the action", () => {
+      const actionOnClick = jest.fn();
+      const type = "star";
+
+      render(<Button type={type} action={actionOnClick} />);
+
+      userEvent.click(screen.getByRole("button"));
+
+      expect(actionOnClick).toHaveBeenCalled();
+    });
+  });
+
+  describe("When it's rendered'", () => {
+    test("Then it should always match this snapshot", () => {
+      const renderedButton = TestRenderer.create(<Button />);
+      expect(renderedButton).toMatchSnapshot();
     });
   });
 });

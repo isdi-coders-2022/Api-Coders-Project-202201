@@ -30,8 +30,7 @@ describe("Given a Footer component", () => {
   });
 });
 
-it("renders consistently , equal to the snapshot", () => {
+it("renders correctly when there are no items", () => {
   const theFooter = reactTestRenderer.create(<Footer />);
-
   expect(theFooter.toJSON()).toMatchSnapshot();
 });

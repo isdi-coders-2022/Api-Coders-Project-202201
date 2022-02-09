@@ -1,21 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders consistently , equal to the snapshot 1`] = `
+exports[`renders correctly when there are no items 1`] = `
 <footer
   className="footer"
 >
   <ul
-    className="links"
+    className="sc-bdvvtL iCMZLq links"
   >
     <li
-      className="links__social"
+      className="sc-furwcr bgBnyz links__social"
     >
       <ul
-        className="social-media"
+        className="sc-dkPtRN bhnSGP social-media"
       >
-        <li>
+        <li
+          className="sc-hKwDye kmOLOI"
+        >
           <a
-            className="social-media__fasebook media-icon"
+            className="sc-gKclnd doAcHi social-media__fasebook media-icon"
             href="https://www.facebook.com/"
           >
             <svg
@@ -37,9 +39,11 @@ exports[`renders consistently , equal to the snapshot 1`] = `
             </svg>
           </a>
         </li>
-        <li>
+        <li
+          className="sc-hKwDye kmOLOI"
+        >
           <a
-            className="social-media__twitter media-icon"
+            className="sc-gKclnd doAcHi social-media__twitter media-icon"
             href="https://twitter.com/"
           >
             <svg
@@ -61,9 +65,11 @@ exports[`renders consistently , equal to the snapshot 1`] = `
             </svg>
           </a>
         </li>
-        <li>
+        <li
+          className="sc-hKwDye kmOLOI"
+        >
           <a
-            className="social-media__linked-in media-icon"
+            className="sc-gKclnd doAcHi social-media__linked-in media-icon"
             href="https://www.linkedin.com"
           >
             <svg
@@ -85,9 +91,11 @@ exports[`renders consistently , equal to the snapshot 1`] = `
             </svg>
           </a>
         </li>
-        <li>
+        <li
+          className="sc-hKwDye kmOLOI"
+        >
           <a
-            className="social-media__instagram media-icon"
+            className="sc-gKclnd doAcHi social-media__instagram media-icon"
             href="https://www.instagram.com"
           >
             <svg
@@ -109,9 +117,11 @@ exports[`renders consistently , equal to the snapshot 1`] = `
             </svg>
           </a>
         </li>
-        <li>
+        <li
+          className="sc-hKwDye kmOLOI"
+        >
           <a
-            className="social-media__youtube media-icon"
+            className="sc-gKclnd doAcHi social-media__youtube media-icon"
             href="https://www.youtube.com"
           >
             <svg
@@ -136,26 +146,27 @@ exports[`renders consistently , equal to the snapshot 1`] = `
       </ul>
     </li>
     <li
-      className="links__join"
+      className="sc-iCfMLu dDpPDZ links__join"
     >
       <a
+        className="sc-gKclnd doAcHi"
         href="https://www.isdicoders.com"
       >
         Join us on Social Media
       </a>
     </li>
     <li
-      className="line"
+      className="sc-jRQBWg hHvgVi line"
     />
     <li
-      className="links__information"
+      className="sc-furwcr bgBnyz links__information"
     >
       <ul
-        className="information"
+        className="sc-gsDKAQ hbyWGV information"
       >
         <li>
           <a
-            className="information__about"
+            className="sc-gKclnd doAcHi information__about"
             href="https://www.isdicoders.com"
           >
             About
@@ -163,7 +174,7 @@ exports[`renders consistently , equal to the snapshot 1`] = `
         </li>
         <li>
           <a
-            className="information__service"
+            className="sc-gKclnd doAcHi information__service"
             href="https://www.isdicoders.com"
           >
             Service
@@ -171,7 +182,7 @@ exports[`renders consistently , equal to the snapshot 1`] = `
         </li>
         <li>
           <a
-            className="information__news"
+            className="sc-gKclnd doAcHi information__news"
             href="https://www.isdicoders.com"
           >
             Company News
@@ -180,9 +191,10 @@ exports[`renders consistently , equal to the snapshot 1`] = `
       </ul>
     </li>
     <li
-      className="links__home"
+      className="sc-eCImPb hcNVfR links__home"
     >
       <a
+        className="sc-gKclnd doAcHi"
         href="home"
       >
         Cocktails

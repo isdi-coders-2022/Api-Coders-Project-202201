@@ -27,10 +27,12 @@ describe("Given a Button component", () => {
       expect(calledFunction).toHaveBeenCalled();
     });
   });
-});
 
-it("renders consistently , equal to the snapshot", () => {
-  const theButton = reactTestRenderer.create(<Button />);
+  describe("When it's rendered constantly", () => {
+    describe("Then it should be equal to the snapshot", () => {
+      const theButton = reactTestRenderer.create(<Button />);
 
-  expect(theButton.toJSON()).toMatchSnapshot();
+      expect(theButton.toJSON()).toMatchSnapshot();
+    });
+  });
 });

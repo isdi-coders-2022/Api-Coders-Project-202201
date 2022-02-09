@@ -3,17 +3,19 @@ import { loadCocktailsAction } from "../store/actions/cocktails/actionsCreators"
 import CocktailDataContext from "../store/contexts/CocktailDataContext";
 
 const useAPI = () => {
-  const apiURL =
-    "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=cocoa";
+  const apiURL = process.env.REACT_APP_CATEGORIES;
   const { dispatch } = useContext(CocktailDataContext);
 
-  const loadCocktailsAPI = useCallback(async () => {
-    try {
-      const response = await fetch(apiURL);
-      const cocktails = await response.json();
-      dispatch(loadCocktailsAction(cocktails));
-    } catch (error) {}
-  }, [apiURL, dispatch]);
+  const loadCocktailsAPI = useCallback(
+    async (url) => {
+      try {
+        const response = await fetch(apiURL + url);
+        const cocktails = await response.json();
+        dispatch(loadCocktailsAction(cocktails));
+      } catch (error) {}
+    },
+    [apiURL, dispatch]
+  );
 
   return { loadCocktailsAPI };
 };

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly when there are no items 1`] = `
+exports[`Given a Footer component When it's rendered' Then it should always match this snapshot 1`] = `
 <footer
   className="footer"
 >

@@ -2,7 +2,7 @@ import { useCallback, useContext } from "react";
 import { loadCocktailsAction } from "../store/actions/cocktails/actionsCreators";
 import CocktailDataContext from "../store/contexts/CocktailDataContext";
 
-const useAPI = () => {
+const useAPI = (url) => {
   const apiURL =
     "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=cocoa";
   const { dispatch } = useContext(CocktailDataContext);

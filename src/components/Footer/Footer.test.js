@@ -4,7 +4,7 @@ import reactTestRenderer from "react-test-renderer";
 
 describe("Given a Footer component", () => {
   describe("When it's rendered", () => {
-    test("Then it should display anchor with text 'Company News'", () => {
+    test("Then it should display link with text 'Company News', link with text 'About', link with text 'Service', link with text 'Join us on Social Media', link with text 'Service', link with text 'Cocktails'", () => {
       render(<Footer />);
 
       const anchorNews = screen.queryByRole("link", { name: "Company News" });
@@ -28,9 +28,11 @@ describe("Given a Footer component", () => {
       expect(anchorCocktails).toBeInTheDocument();
     });
   });
-});
 
-it("renders correctly when there are no items", () => {
-  const theFooter = reactTestRenderer.create(<Footer />);
-  expect(theFooter.toJSON()).toMatchSnapshot();
+  describe("When it's rendered'", () => {
+    test("Then it should always match this snapshot", () => {
+      const theFooter = reactTestRenderer.create(<Footer />);
+      expect(theFooter.toJSON()).toMatchSnapshot();
+    });
+  });
 });

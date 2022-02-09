@@ -1,38 +1,78 @@
-import actionsTypes from "../actions/cocktails/actionsTypes";
 import cocktailsReducer from "./cocktailsReducer";
 
 describe("Given a cocktailsReducer function", () => {
-  describe("When it receives 'Absinthe #2' and 'Amaretto Liqueur' objects", () => {
+  describe("When it receives 'cocktails' with 'Absinthe #2' and 'Amaretto Liqueur' objects and 'loadCocktailsAction' action", () => {
     test("Then it should return 'Absinthe #2' and 'Amaretto Liqueur' objects", () => {
-      const cocktails = [
-        {
-          strDrink: "Absinthe #2",
-          strDrinkThumb: "",
-          idDrink: "12790",
-        },
-        {
-          strDrink: "Amaretto Liqueur",
-          strDrinkThumb: "",
-          idDrink: "12792",
-        },
-      ];
+      const currentCocktails = [];
+
       const action = {
-        type: actionsTypes.loadCocktailsAction,
+        type: "load-cocktails",
+        cocktails: {
+          drinks: [
+            {
+              nombre: "Castillian Hot Chocolate",
+              url: "",
+              id: "1",
+            },
+            {
+              nombre: "Chocolate Beverage",
+              url: "",
+              id: "2",
+            },
+          ],
+        },
       };
+
       const expectedCocktails = [
         {
-          strDrink: "Absinthe #2",
-          strDrinkThumb: "",
-          idDrink: "12790",
+          nombre: "Castillian Hot Chocolate",
+          url: "",
+          id: "1",
         },
         {
-          strDrink: "Amaretto Liqueur",
-          strDrinkThumb: "",
-          idDrink: "12792",
+          nombre: "Chocolate Beverage",
+          url: "",
+          id: "2",
         },
       ];
 
-      const cocktailsList = cocktailsReducer(cocktails, action);
+      const cocktailsList = cocktailsReducer(currentCocktails, action);
+
+      expect(cocktailsList).toEqual(expectedCocktails);
+    });
+  });
+
+  describe("When it receives 'cocktails' with 'Absinthe #2' and 'Amaretto Liqueur' objects and 'doSomethingAction' action", () => {
+    test("Then it should return an empty array", () => {
+      const currentCocktails = [
+        {
+          nombre: "Castillian Hot Chocolate",
+          url: "",
+          id: "1",
+        },
+        {
+          nombre: "Chocolate Beverage",
+          url: "",
+          id: "2",
+        },
+      ];
+      const action = {
+        type: "doSomething",
+      };
+      const expectedCocktails = [
+        {
+          nombre: "Castillian Hot Chocolate",
+          url: "",
+          id: "1",
+        },
+        {
+          nombre: "Chocolate Beverage",
+          url: "",
+          id: "2",
+        },
+      ];
+
+      const cocktailsList = cocktailsReducer(currentCocktails, action);
 
       expect(cocktailsList).toEqual(expectedCocktails);
     });

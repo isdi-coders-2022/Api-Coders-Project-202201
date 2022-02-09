@@ -5,6 +5,8 @@ import CocktailDetails from "./components/CocktailDetails/CocktailDetails";
 import Button from "./components/Button/Button";
 import { useEffect } from "react";
 import useAPI from "./hooks/useApi";
+import { Routes, Route, Navigate } from "react-router-dom";
+import CategoryPage from "./components/CategoryPage/CategoryPage";
 
 function App() {
   const { loadCocktailsAPI } = useAPI();
@@ -14,15 +16,19 @@ function App() {
   }, [loadCocktailsAPI]);
 
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <CocktailDetails />
-        <Navigation />
-      </main>
-      <Footer />
-      <Button />
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigate to={"/home"} />} />
+      <Route path="components/CategoryPage" element={<CategoryPage />}></Route>
+      <div className="App">
+        <Header />
+        <main>
+          <CocktailDetails />
+          <Navigation />
+        </main>
+        <Footer />
+        <Button />
+      </div>
+    </Routes>
   );
 }
 

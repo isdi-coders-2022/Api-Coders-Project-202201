@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import "./CocktailDetails.css";
 
 const CoctailDescription = styled.section`
   font-family: Recursive;

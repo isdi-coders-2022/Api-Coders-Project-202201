@@ -5,7 +5,7 @@ const cocktailsReducer = (currentCocktails, action) => {
 
   switch (action.type) {
     case actionsTypes.loadCocktails:
-      newCocktails = [action.cocktails];
+      newCocktails = [...action.cocktails.drinks];
       break;
     default:
       newCocktails = [...currentCocktails];

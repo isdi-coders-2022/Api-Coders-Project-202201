@@ -1,8 +1,8 @@
 import cocktailsReducer from "./cocktailsReducer";
 
 describe("Given a cocktailsReducer function", () => {
-  describe("When it receives 'cocktails' with 'Absinthe #2' and 'Amaretto Liqueur' objects and 'loadCocktailsAction' action", () => {
-    test("Then it should return 'Absinthe #2' and 'Amaretto Liqueur' objects", () => {
+  describe("When it receives 'cocktails' with 'Castillian Hot Chocolate' and 'Chocolate Beverage' objects and 'loadCocktailsAction' action", () => {
+    test("Then it should return 'Castillian Hot Chocolate' and 'Chocolate Beverage' objects", () => {
       const currentCocktails = [];
 
       const action = {
@@ -40,7 +40,7 @@ describe("Given a cocktailsReducer function", () => {
     });
   });
 
-  describe("When it receives 'cocktails' with 'Absinthe #2' and 'Amaretto Liqueur' objects and 'doSomethingAction' action", () => {
+  describe("When it receives 'cocktails' with 'Castillian Hot Chocolate' and 'Chocolate Beverager' objects and 'doSomethingAction' action", () => {
     test("Then it should return an empty array", () => {
       const currentCocktails = [
         {

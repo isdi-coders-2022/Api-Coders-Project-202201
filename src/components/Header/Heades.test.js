@@ -22,9 +22,3 @@ describe("Given a Header component", () => {
     });
   });
 });
-
-it("renders consistently , equal to the snapshot", () => {
-  const theHeader = reactTestRenderer.create(<Header />);
-
-  expect(theHeader.toJSON()).toMatchSnapshot();
-});

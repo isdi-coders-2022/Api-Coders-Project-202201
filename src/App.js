@@ -34,7 +34,7 @@ function App() {
           <Route path="/mybar">
             <Route index element={<MyBarPage />} />
             {/*<Route path="/view/:id" element={<CocktailPage />} />*/}
-            <Route path="new" element={<FormPage />} />
+            <Route path="new" element={<FormMyBarPage />} />
             {/*<Route
           path="edit/:id"
           element={"FormPage />"}

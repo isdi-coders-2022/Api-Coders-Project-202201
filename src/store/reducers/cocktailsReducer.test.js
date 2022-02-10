@@ -1,8 +1,8 @@
 import cocktailsReducer from "./cocktailsReducer";
 
 describe("Given a cocktailsReducer function", () => {
-  describe("When it receives 'cocktails' with 'Absinthe #2' and 'Amaretto Liqueur' objects and 'loadCocktailsAction' action", () => {
-    test("Then it should return 'Absinthe #2' and 'Amaretto Liqueur' objects", () => {
+  describe("When it receives 'cocktails' with 'Castillian Hot Chocolate' and 'Chocolate Beverage' objects and 'loadCocktailsAction' action", () => {
+    test("Then it should return 'Castillian Hot Chocolate' and 'Chocolate Beverage' objects", () => {
       const currentCocktails = [];
 
       const action = {
@@ -40,7 +40,7 @@ describe("Given a cocktailsReducer function", () => {
     });
   });
 
-  describe("When it receives 'cocktails' with 'Absinthe #2' and 'Amaretto Liqueur' objects and 'doSomethingAction' action", () => {
+  describe("When it receives 'cocktails' with 'Castillian Hot Chocolate' and 'Chocolate Beverager' objects and 'doSomethingAction' action", () => {
     test("Then it should return an empty array", () => {
       const currentCocktails = [
         {
@@ -67,6 +67,56 @@ describe("Given a cocktailsReducer function", () => {
           nombre: "Chocolate Beverage",
           url: "",
           id: "2",
+        },
+      ];
+
+      const cocktailsList = cocktailsReducer(currentCocktails, action);
+
+      expect(cocktailsList).toEqual(expectedCocktails);
+    });
+  });
+
+  describe("When it receives current cocktails and addCocktail action with 'Mojito'", () => {
+    test("Then it should return a new current cocktails with 'Mojito' inside", () => {
+      const currentCocktails = [
+        {
+          nombre: "Castillian Hot Chocolate",
+          url: "",
+          id: "1",
+        },
+        {
+          nombre: "Chocolate Beverage",
+          url: "",
+          id: "2",
+        },
+      ];
+
+      const action = {
+        type: "add-cocktail",
+        cocktails: [
+          {
+            nombre: "Mojito",
+            url: "",
+            id: "3",
+          },
+        ],
+      };
+
+      const expectedCocktails = [
+        {
+          nombre: "Castillian Hot Chocolate",
+          url: "",
+          id: "1",
+        },
+        {
+          nombre: "Chocolate Beverage",
+          url: "",
+          id: "2",
+        },
+        {
+          nombre: "Mojito",
+          url: "",
+          id: "3",
         },
       ];
 

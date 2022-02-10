@@ -77,11 +77,7 @@ const HomePage = () => {
 
       <Ul>
         {cocktails.map((cocktail) => (
-          <Cocktail
-            key={cocktail.idDrink}
-            name={cocktail.strDrink}
-            src={cocktail.strDrinkThumb}
-          />
+          <Cocktail key={cocktail.idDrink} cocktail={cocktail} />
         ))}
       </Ul>
     </>

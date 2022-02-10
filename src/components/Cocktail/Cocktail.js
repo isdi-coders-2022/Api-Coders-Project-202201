@@ -45,7 +45,11 @@ const ButtonContainer = styled.div`
   padding-top: 20px;
 `;
 
-const Cocktail = ({ name, src, actionButton, actionCard }) => {
+const Cocktail = ({
+  cocktail: { strDrink, strDrinkThumb },
+  actionButton,
+  actionCard,
+}) => {
   return (
     <CocktailCard onClick={actionCard} className="cocktail-card">
       <ButtonContainer className="button-container">
@@ -61,8 +65,8 @@ const Cocktail = ({ name, src, actionButton, actionCard }) => {
           onClick={actionButton}
         />
       </ButtonContainer>
-      <Title className="cocktail__title">{name}</Title>
-      <Image className="cocktail__image" src={src} alt={name} />
+      <Title className="cocktail__title">{strDrink}</Title>
+      <Image className="cocktail__image" src={strDrinkThumb} alt={strDrink} />
     </CocktailCard>
   );
 };

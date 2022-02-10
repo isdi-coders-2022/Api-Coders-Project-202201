@@ -46,7 +46,9 @@ const ButtonContainer = styled.div`
 `;
 
 const Cocktail = ({
-  cocktail: { name, src, selected, actionButton, actionCard },
+  cocktail: { name, src, selected },
+  actionButton,
+  actionCard,
 }) => {
   return (
     <CocktailCard onClick={actionCard} className="cocktail-card">

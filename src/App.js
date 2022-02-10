@@ -1,7 +1,4 @@
-import { useContext, useEffect } from "react";
-import useAPI from "./hooks/useApi";
 import { Routes, Route, Navigate } from "react-router-dom";
-import CocktailDataContext from "./store/contexts/CocktailDataContext";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import HomePage from "./pages/HomePage/HomePage";
 import Navigation from "./components/Navigation/Navigation";
@@ -12,14 +9,6 @@ import FormMyBarPage from "./pages/FormMyBarPage/FormMyBarPage";
 import MyBarPage from "./pages/MyBarPage/MyBarPage";
 
 function App() {
-  const { loadCocktailsAPI } = useAPI();
-
-  const { searchText } = useContext(CocktailDataContext);
-
-  useEffect(() => {
-    loadCocktailsAPI(searchText);
-  }, [searchText, loadCocktailsAPI]);
-
   return (
     <>
       <Header />

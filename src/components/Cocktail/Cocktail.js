@@ -3,7 +3,7 @@ import styled from "styled-components";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
-import { faStar as starSolid } from "@fortawesome/free-solid-svg-icons";
+// import { faStar as starSolid } from "@fortawesome/free-solid-svg-icons";
 
 const CocktailCard = styled.li`
   position: relative;
@@ -45,22 +45,18 @@ const ButtonContainer = styled.div`
   padding-top: 20px;
 `;
 
-const Cocktail = ({
-  cocktail: { name, src, selected },
-  actionButton,
-  actionCard,
-}) => {
+const Cocktail = ({ name, src, actionButton, actionCard }) => {
   return (
     <CocktailCard onClick={actionCard} className="cocktail-card">
       <ButtonContainer className="button-container">
         <Button
           type="star"
           text={
-            selected ? (
-              <FontAwesomeIcon icon={starSolid} />
-            ) : (
-              <FontAwesomeIcon icon={faStar} />
-            )
+            // selected ? (
+            // <FontAwesomeIcon icon={starSolid} />
+            //   ) : (
+            <FontAwesomeIcon icon={faStar} />
+            //   )
           }
           onClick={actionButton}
         />

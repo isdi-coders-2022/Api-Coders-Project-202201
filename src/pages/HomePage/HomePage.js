@@ -1,4 +1,11 @@
+import { useContext, useEffect } from "react";
+
 import styled from "styled-components";
+import Cocktail from "../../components/Cocktail/Cocktail";
+import useAPI from "../../hooks/useApi";
+
+import CocktailDataContext from "../../store/contexts/CocktailDataContext";
+
 const ExploreButton = styled.button`
   background-color: #7d4646;
   border: none;
@@ -34,7 +41,25 @@ const SimpleText = styled.p`
   width: 80%;
 `;
 
+const Ul = styled.ul`
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 const HomePage = () => {
+  const { loadCocktailsAPI } = useAPI();
+
+  const { searchText, cocktails } = useContext(CocktailDataContext);
+
+  useEffect(() => {
+    loadCocktailsAPI(searchText);
+  }, [searchText, loadCocktailsAPI]);
+
   return (
     <>
       <BackgroundPage>
@@ -49,6 +74,16 @@ const HomePage = () => {
         />
       </BackgroundPage>
       <h2>Cocktails</h2>
+
+      <Ul>
+        {cocktails.map((cocktail) => (
+          <Cocktail
+            key={cocktail.idDrink}
+            name={cocktail.strDrink}
+            src={cocktail.strDrinkThumb}
+          />
+        ))}
+      </Ul>
     </>
   );
 };

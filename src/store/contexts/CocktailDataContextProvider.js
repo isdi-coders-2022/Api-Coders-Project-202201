@@ -76,9 +76,19 @@ const CocktailDataContextProvider = ({ children }) => {
 
   const [cocktails, dispatch] = useReducer(cocktailsReducer, []);
 
+  let [localCocktails, localDispatch] = useReducer(cocktailsReducer, []);
+
   return (
     <CocktailDataContext.Provider
-      value={{ categoriesList, cocktails, dispatch, searchText, setSearchText }}
+      value={{
+        categoriesList,
+        cocktails,
+        dispatch,
+        searchText,
+        setSearchText,
+        localCocktails,
+        localDispatch,
+      }}
     >
       {children}
     </CocktailDataContext.Provider>

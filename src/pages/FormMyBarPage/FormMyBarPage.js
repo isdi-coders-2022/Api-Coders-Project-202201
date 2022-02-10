@@ -26,15 +26,14 @@ const FormMyBarPage = () => {
     <>
       <h2>Create a cocktail</h2>
 
-      <Form onSubmit={""} autoComplete="off" novalidate>
+      <Form autoComplete="off" novalidate>
         <Label forhtml="name" className="form-label">
           Name your cocktail:
         </Label>
         <Input
           type="text"
-          id="name"
+          aria-labelledby="name"
           placeholder="Marta's Cocktail"
-          onChange={""}
         />
 
         <Label forhtml="src" className="form-label">
@@ -42,31 +41,29 @@ const FormMyBarPage = () => {
         </Label>
         <Input
           type="text"
-          id="src"
+          aria-labelledby="src"
           placeholder="https://martascocktail.com/image.jpg"
-          onChange={""}
         />
 
         <Label forhtml="category" className="form-label">
           Category:
         </Label>
-        <Input type="text" id="category" placeholder="Cocoa" onChange={""} />
+        <Input type="text" aria-labelledby="category" placeholder="Cocoa" />
 
         <Label forhtml="name" className="form-label">
           Ingredients:
         </Label>
         <Input
           type="text"
-          id="name"
+          aria-labelledby="name"
           placeholder="Marta's Cocktail"
-          onChange={""}
         />
 
-        <Label forhtml="perparation" className="form-label">
+        <Label forhtml="preparation" className="form-label">
           Preparation:
         </Label>
         <TextArea
-          id="perparation"
+          aria-labelledby="preparation"
           rows="10"
           cols="30"
           placeholder="First add a little bit of sugar into..."
@@ -75,7 +72,7 @@ const FormMyBarPage = () => {
         <Label forhtml="alcohol" className="form-label">
           Alcohol:
         </Label>
-        <Input type="checkbox" id="alcohol" onChange={""} />
+        <Input type="checkbox" aria-labelledby="alcohol" />
 
         <button type="submit">Create</button>
       </Form>

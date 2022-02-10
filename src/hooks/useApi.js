@@ -2,6 +2,7 @@ import { useCallback, useContext } from "react";
 import {
   addCocktailAction,
   loadCocktailsAction,
+  loadLocalCocktailsAction,
 } from "../store/actions/cocktails/actionsCreators";
 import CocktailDataContext from "../store/contexts/CocktailDataContext";
 
@@ -20,6 +21,17 @@ const useAPI = () => {
       } catch (error) {}
     },
     [apiURL, dispatch]
+  );
+
+  const loadLocalCocktailsAPI = useCallback(
+    async (url) => {
+      try {
+        const response = await fetch(localAPI);
+        const cocktails = await response.json();
+        dispatch(loadLocalCocktailsAction(cocktails));
+      } catch (error) {}
+    },
+    [localAPI, dispatch]
   );
 
   const addCocktailAPI = async (cocktail) => {
@@ -45,7 +57,7 @@ const useAPI = () => {
     localDispatch(addCocktailAction(newCocktail));
   };
 
-  return { loadCocktailsAPI, addCocktailAPI };
+  return { loadCocktailsAPI, addCocktailAPI, loadLocalCocktailsAPI };
 };
 
 export default useAPI;

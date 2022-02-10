@@ -1,19 +1,17 @@
-import { loadCocktailsAction } from "./actionsCreators";
+import { addCocktailAction, loadCocktailsAction } from "./actionsCreators";
 
 describe("Given a cocktailsReducer function", () => {
-  describe("When it receives 'Absinthe #2' and 'Amaretto Liqueur' objects", () => {
-    test("Then it should return 'Absinthe #2' and 'Amaretto Liqueur' objects", () => {
+  describe("When it receives 'Coffee Liqueur' and 'Coffee-Vodka' objects", () => {
+    test("Then it should return 'Coffee Liqueur' and 'Coffee-Vodka' objects", () => {
       const cocktails = [
         {
           strDrink: "Coffee Liqueur",
-          strDrinkThumb:
-            "https://www.thecocktaildb.com/images/media/drink/ryvtsu1441253851.jpg",
+          strDrinkThumb: "",
           idDrink: "12798",
         },
         {
           strDrink: "Coffee-Vodka",
-          strDrinkThumb:
-            "https://www.thecocktaildb.com/images/media/drink/qvrrvu1472667494.jpg",
+          strDrinkThumb: "",
           idDrink: "12800",
         },
       ];
@@ -23,6 +21,27 @@ describe("Given a cocktailsReducer function", () => {
       };
 
       const action = loadCocktailsAction(cocktails);
+
+      expect(action).toEqual(expectedAction);
+    });
+  });
+
+  describe("When it receives current cocktails and addCocktail action with 'Mojito'", () => {
+    test("Then it should return a new current cocktails with 'Mojito' inside", () => {
+      const cocktail = [
+        {
+          nombre: "Mojito",
+          url: "",
+          id: "3",
+        },
+      ];
+
+      const expectedAction = {
+        type: "add-cocktail",
+        cocktail,
+      };
+
+      const action = addCocktailAction(cocktail);
 
       expect(action).toEqual(expectedAction);
     });

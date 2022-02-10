@@ -10,6 +10,9 @@ const cocktailsReducer = (currentCocktails, action) => {
     case actionsTypes.addCocktail:
       newCocktails = [...currentCocktails, ...action.cocktail];
       break;
+    case actionsTypes.loadLocalCocktails:
+      newCocktails = [...action.cocktails];
+      break;
     default:
       newCocktails = [...currentCocktails];
   }

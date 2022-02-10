@@ -9,3 +9,8 @@ export const addCocktailAction = (cocktail) => ({
   type: actionsTypes.addCocktail,
   cocktail,
 });
+
+export const loadLocalCocktailsAction = (cocktails) => ({
+  type: actionsTypes.loadLocalCocktails,
+  cocktails,
+});

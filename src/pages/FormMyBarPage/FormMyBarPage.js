@@ -10,8 +10,12 @@ const Form = styled.form`
   margin-left: 50px;
 `;
 
-const Input = styled.input`
+const Label = styled.label`
   margin-bottom: 10px;
+`;
+
+const Input = styled.input`
+  margin-bottom: 15px;
 `;
 
 const TextArea = styled.textarea`
@@ -23,10 +27,10 @@ const FormMyBarPage = () => {
     <>
       <h2>Create a cocktail</h2>
 
-      <Form>
-        <label forhtml="name" className="form-label">
+      <Form onSubmit={""} autoComplete="off" novalidate>
+        <Label forhtml="name" className="form-label">
           Name your cocktail:
-        </label>
+        </Label>
         <Input
           type="text"
           id="name"
@@ -34,9 +38,9 @@ const FormMyBarPage = () => {
           onChange={""}
         />
 
-        <label forhtml="src" className="form-label">
+        <Label forhtml="src" className="form-label">
           Image URL:
-        </label>
+        </Label>
         <Input
           type="text"
           id="src"
@@ -44,14 +48,14 @@ const FormMyBarPage = () => {
           onChange={""}
         />
 
-        <label forhtml="category" className="form-label">
+        <Label forhtml="category" className="form-label">
           Category:
-        </label>
+        </Label>
         <Input type="text" id="category" placeholder="Cocoa" onChange={""} />
 
-        <label forhtml="name" className="form-label">
+        <Label forhtml="name" className="form-label">
           Ingredients:
-        </label>
+        </Label>
         <Input
           type="text"
           id="name"
@@ -59,9 +63,9 @@ const FormMyBarPage = () => {
           onChange={""}
         />
 
-        <label forhtml="perparation" className="form-label">
+        <Label forhtml="perparation" className="form-label">
           Preparation:
-        </label>
+        </Label>
         <TextArea
           id="perparation"
           rows="10"
@@ -69,12 +73,12 @@ const FormMyBarPage = () => {
           placeholder="First add a little bit of sugar into..."
         ></TextArea>
 
-        <label forhtml="alcohol" className="form-label">
+        <Label forhtml="alcohol" className="form-label">
           Alcohol:
-        </label>
+        </Label>
         <Input type="checkbox" id="alcohol" onChange={""} />
 
-        <Button type="simple" text="Create" action={""} />
+        <button type="submit">Create</button>
       </Form>
     </>
   );

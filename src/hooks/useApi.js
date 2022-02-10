@@ -11,7 +11,7 @@ const useAPI = () => {
       try {
         const response = await fetch(apiURL + url);
         const cocktails = await response.json();
-        dispatch(loadCocktailsAction(cocktails));
+        dispatch(loadCocktailsAction(cocktails.drinks));
       } catch (error) {}
     },
     [apiURL, dispatch]

@@ -72,7 +72,7 @@ const CocktailDataContextProvider = ({ children }) => {
     },
   ];
 
-  const [searchText, setSearchText] = useState("list.php?c=list");
+  const [searchText, setSearchText] = useState("filter.php?c=Ordinary_Drink");
 
   const [cocktails, dispatch] = useReducer(cocktailsReducer, []);
 

@@ -1,7 +1,7 @@
 const MyBarPage = () => {
   return (
     <>
-      <h1>My Bar</h1>
+      <h2>My Bar</h2>
       <ul></ul>
     </>
   );

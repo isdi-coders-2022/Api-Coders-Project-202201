@@ -1,7 +1,9 @@
+import { H2 } from "../../globalStyles";
+
 const MyBarPage = () => {
   return (
     <>
-      <h2>My Bar</h2>
+      <H2>My Bar</H2>
       <ul></ul>
     </>
   );

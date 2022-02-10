@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 
 import styled from "styled-components";
 import Cocktail from "../../components/Cocktail/Cocktail";
+import { H2 } from "../../globalStyles";
 import useAPI from "../../hooks/useApi";
 
 import CocktailDataContext from "../../store/contexts/CocktailDataContext";
@@ -73,7 +74,7 @@ const HomePage = () => {
           alt="background-cocktails"
         />
       </BackgroundPage>
-      <h2>Cocktails</h2>
+      <H2>Cocktails</H2>
 
       <Ul>
         {cocktails.map((cocktail) => (

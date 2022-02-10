@@ -14,18 +14,3 @@ exports[`Given a Header component When it's rendered Then it should be equal to 
   </h1>
 </header>
 `;
-
-exports[`renders consistently , equal to the snapshot 1`] = `
-<header
-  className="sc-bdvvtL jsna-dJ"
->
-  <h1
-    className="sc-gsDKAQ fHUoGR header__title"
-  >
-    Cocktails 
-    <i
-      className="fas fa-glass-martini-alt title__icon"
-    />
-  </h1>
-</header>
-`;

@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation/Navigation";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import FormMyBarPage from "./pages/FormMyBarPage/FormMyBarPage";
 import MyBarPage from "./pages/MyBarPage/MyBarPage";
 
 function App() {
@@ -32,12 +33,12 @@ function App() {
           <Route path="/categories" element={<CategoryPage />} />
           <Route path="/mybar">
             <Route index element={<MyBarPage />} />
-            {/*<Route path="/view/:id" element={<CocktailPage />} />
-        <Route path="new" element={<FormPage />} />
-        <Route
+            {/*<Route path="/view/:id" element={<CocktailPage />} />*/}
+            <Route path="new" element={<FormMyBarPage />} />
+            {/*<Route
           path="edit/:id"
           element={"FormPage />"}
-  />*/}
+          /> */}
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

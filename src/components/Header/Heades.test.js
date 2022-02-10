@@ -14,10 +14,11 @@ describe("Given a Header component", () => {
       expect(title).toBeInTheDocument();
     });
   });
-});
+  describe("When it's rendered", () => {
+    test("Then it should be equal to the last snapshot", () => {
+      const theHeader = reactTestRenderer.create(<Header />);
 
-it("renders consistently , equal to the snapshot", () => {
-  const theHeader = reactTestRenderer.create(<Header />);
-
-  expect(theHeader.toJSON()).toMatchSnapshot();
+      expect(theHeader.toJSON()).toMatchSnapshot();
+    });
+  });
 });

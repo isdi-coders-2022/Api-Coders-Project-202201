@@ -1,15 +1,20 @@
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import TestRenderer from "react-test-renderer";
 import Navigation from "./Navigation";
 
 describe("Given a Navigation component", () => {
   describe("When it's rendered", () => {
     test("Then it should display links with 'Home' 'My Bar' and 'Create My Cocktail' as text", () => {
-      render(<Navigation />);
+      render(
+        <BrowserRouter>
+          <Navigation />
+        </BrowserRouter>
+      );
 
-      const navigationHome = screen.queryByRole("link", { name: "Home" });
-      const navigationMyBar = screen.queryByRole("link", { name: "My Bar" });
-      const navigationCreateMyCocktail = screen.queryByRole("link", {
+      const navigationHome = screen.getByRole("link", { name: "Home" });
+      const navigationMyBar = screen.getByRole("link", { name: "My Bar" });
+      const navigationCreateMyCocktail = screen.getByRole("link", {
         name: "Create My Cocktail",
       });
 
@@ -21,7 +26,11 @@ describe("Given a Navigation component", () => {
 
   describe("When it's rendered'", () => {
     test("Then it should always match this snapshot", () => {
-      const renderedNavigation = TestRenderer.create(<Navigation />);
+      const renderedNavigation = TestRenderer.create(
+        <BrowserRouter>
+          <Navigation />
+        </BrowserRouter>
+      );
 
       expect(renderedNavigation).toMatchSnapshot();
     });

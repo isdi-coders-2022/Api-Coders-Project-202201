@@ -1,12 +1,13 @@
-import Header from "./components/Header/Header";
-import Navigation from "./components/Navigation/Navigation";
-import Footer from "./components/Footer/Footer";
-import Button from "./components/Button/Button";
 import { useContext, useEffect } from "react";
 import useAPI from "./hooks/useApi";
 import { Routes, Route, Navigate } from "react-router-dom";
-import CategoryPage from "./components/CategoryPage/CategoryPage";
 import CocktailDataContext from "./store/contexts/CocktailDataContext";
+import CategoryPage from "./pages/CategoryPage/CategoryPage";
+import HomePage from "./pages/HomePage/HomePage";
+import Navigation from "./components/Navigation/Navigation";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 function App() {
   const { loadCocktailsAPI } = useAPI();
@@ -19,22 +20,28 @@ function App() {
 
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Navigate to={"/home"} />} />
-        <Route
-          path="components/CategoryPage"
-          element={<CategoryPage />}
-        ></Route>
-      </Routes>
+      <Header />
 
-      <div className="App">
-        <Header />
-        <main>
-          <Navigation />
-        </main>
-        <Footer />
-        <Button />
-      </div>
+      <main>
+        <Navigation />
+
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/categories" element={<CategoryPage />} />
+          {/* <Route path="/mybar">
+        <Route index element={<MyBar />} />
+        <Route path="/view/:id" element={<CocktailPage />} />
+        <Route path="new" element={<FormPage />} />
+        <Route
+          path="edit/:id"
+          element={"FormPage />"}
+        />
+      </Route> */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </main>
+      <Footer />
     </>
   );
 }

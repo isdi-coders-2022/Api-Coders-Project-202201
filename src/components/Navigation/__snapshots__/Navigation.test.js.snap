@@ -73,7 +73,7 @@ exports[`Given a Navigation component When it's rendered' Then it should always 
       className="navigation__item add"
     >
       <a
-        href="/form"
+        href="/mybar/new"
         onClick={[Function]}
       >
         <svg

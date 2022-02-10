@@ -29,7 +29,7 @@ const Navigation = () => {
         </li>
 
         <li className="navigation__item add">
-          <Link to="/form">
+          <Link to="/mybar/new">
             <FontAwesomeIcon
               icon={faPlus}
               className="navigation__icon plusIcon"

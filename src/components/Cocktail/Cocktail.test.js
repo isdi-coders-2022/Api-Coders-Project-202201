@@ -6,11 +6,8 @@ describe("Given a Cocktail component", () => {
   describe("When it receives cocktail with 'Marta' as name", () => {
     test("Then it should display h2 with text 'Marta'", () => {
       const cocktail = {
-        name: "Marta",
-        src: "",
-        selected: "",
-        actionButton: "",
-        actionCard: "",
+        strDrink: "Marta",
+        strDrinkThumb: "",
       };
 
       render(<Cocktail cocktail={cocktail} />);
@@ -24,11 +21,8 @@ describe("Given a Cocktail component", () => {
   describe("When it receives cocktail with 'Mojito' as name", () => {
     test("Then it should display img with alt 'Mojito'", () => {
       const cocktail = {
-        name: "Marta",
-        src: "",
-        selected: "",
-        actionButton: "",
-        actionCard: "",
+        strDrink: "Marta",
+        strDrinkThumb: "",
       };
 
       render(<Cocktail cocktail={cocktail} />);
@@ -42,11 +36,8 @@ describe("Given a Cocktail component", () => {
   describe("When it's rendered'", () => {
     test("Then it should render a button", () => {
       const cocktail = {
-        name: "Marta",
-        src: "",
-        selected: "",
-        actionButton: "",
-        actionCard: "",
+        strDrink: "Marta",
+        strDrinkThumb: "",
       };
 
       render(<Cocktail cocktail={cocktail} />);
@@ -60,11 +51,8 @@ describe("Given a Cocktail component", () => {
   describe("When it receives an actionCard and a click", () => {
     test("Then it should execute the action", () => {
       const cocktail = {
-        name: "Marta",
-        src: "",
-        selected: "",
-        actionButton: "",
-        actionCard: "",
+        strDrink: "Marta",
+        strDrinkThumb: "",
       };
       const actionOnClick = jest.fn();
 

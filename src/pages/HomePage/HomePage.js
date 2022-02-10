@@ -53,13 +53,17 @@ const Ul = styled.ul`
 `;
 
 const HomePage = () => {
-  const { loadCocktailsAPI } = useAPI();
+  const { loadCocktailsAPI, addCocktailAPI } = useAPI();
 
   const { searchText, cocktails } = useContext(CocktailDataContext);
 
   useEffect(() => {
     loadCocktailsAPI(searchText);
   }, [searchText, loadCocktailsAPI]);
+
+  const addCocktailToFavorite = (cocktail) => {
+    addCocktailAPI(cocktail);
+  };
 
   return (
     <>
@@ -78,7 +82,13 @@ const HomePage = () => {
 
       <Ul>
         {cocktails.map((cocktail) => (
-          <Cocktail key={cocktail.idDrink} cocktail={cocktail} />
+          <Cocktail
+            key={cocktail.idDrink}
+            cocktail={cocktail}
+            buttonOnClick={() => {
+              addCocktailToFavorite(cocktail);
+            }}
+          />
         ))}
       </Ul>
     </>

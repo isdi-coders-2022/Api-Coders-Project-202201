@@ -7,7 +7,8 @@ import CocktailDataContext from "../store/contexts/CocktailDataContext";
 
 const useAPI = () => {
   const apiURL = process.env.REACT_APP_CATEGORIES;
-  const { dispatch } = useContext(CocktailDataContext);
+  let { dispatch, localDispatch, localCocktails } =
+    useContext(CocktailDataContext);
   const localAPI = process.env.REACT_APP_LOCALAPI;
 
   const loadCocktailsAPI = useCallback(
@@ -22,14 +23,26 @@ const useAPI = () => {
   );
 
   const addCocktailAPI = async (cocktail) => {
+    const favouriteCocktails = [...localCocktails, cocktail];
+
+    const filteredFavorite = [
+      ...new Map(
+        favouriteCocktails.map((favoriteCocktail) => [
+          favoriteCocktail.idDrink,
+          favoriteCocktail,
+        ])
+      ).values(),
+    ];
+
     const response = await fetch(localAPI, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(cocktail),
+      body: JSON.stringify(filteredFavorite),
     });
 
-    const newCocktail = response.json();
-    dispatch(addCocktailAction(newCocktail));
+    const newCocktail = await response.json();
+
+    localDispatch(addCocktailAction(newCocktail));
   };
 
   return { loadCocktailsAPI, addCocktailAPI };

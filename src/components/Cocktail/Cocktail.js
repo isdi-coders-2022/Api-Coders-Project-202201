@@ -47,22 +47,15 @@ const ButtonContainer = styled.div`
 
 const Cocktail = ({
   cocktail: { strDrink, strDrinkThumb },
-  actionButton,
+  buttonOnClick,
   actionCard,
 }) => {
   return (
     <CocktailCard onClick={actionCard} className="cocktail-card">
       <ButtonContainer className="button-container">
         <Button
-          type="star"
-          text={
-            // selected ? (
-            // <FontAwesomeIcon icon={starSolid} />
-            //   ) : (
-            <FontAwesomeIcon icon={faStar} />
-            //   )
-          }
-          onClick={actionButton}
+          text={<FontAwesomeIcon icon={faStar} />}
+          actionOnClick={buttonOnClick}
         />
       </ButtonContainer>
       <Title className="cocktail__title">{strDrink}</Title>

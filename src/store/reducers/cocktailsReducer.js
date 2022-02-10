@@ -8,7 +8,7 @@ const cocktailsReducer = (currentCocktails, action) => {
       newCocktails = [...action.cocktails];
       break;
     case actionsTypes.addCocktail:
-      newCocktails = [...currentCocktails, action.cocktail];
+      newCocktails = [...currentCocktails, ...action.cocktail];
       break;
     default:
       newCocktails = [...currentCocktails];

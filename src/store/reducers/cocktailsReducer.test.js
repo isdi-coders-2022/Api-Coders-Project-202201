@@ -7,20 +7,18 @@ describe("Given a cocktailsReducer function", () => {
 
       const action = {
         type: "load-cocktails",
-        cocktails: {
-          drinks: [
-            {
-              nombre: "Castillian Hot Chocolate",
-              url: "",
-              id: "1",
-            },
-            {
-              nombre: "Chocolate Beverage",
-              url: "",
-              id: "2",
-            },
-          ],
-        },
+        cocktails: [
+          {
+            nombre: "Castillian Hot Chocolate",
+            url: "",
+            id: "1",
+          },
+          {
+            nombre: "Chocolate Beverage",
+            url: "",
+            id: "2",
+          },
+        ],
       };
 
       const expectedCocktails = [

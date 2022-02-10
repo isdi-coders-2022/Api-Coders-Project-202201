@@ -1,4 +1,5 @@
 import "./Navigation.css";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGlassMartiniAlt,
@@ -11,30 +12,30 @@ const Navigation = () => {
     <nav className="navigation">
       <ul className="navigation__list">
         <li className="navigation__item home">
-          <a href="home">
+          <Link to="/home">
             <FontAwesomeIcon icon={faHouse} className="navigation__icon" />
             <span className="navigation__text">Home</span>
-          </a>
+          </Link>
         </li>
 
         <li className="navigation__item glass">
-          <a href="mybar">
+          <Link to="/mybar">
             <FontAwesomeIcon
               icon={faGlassMartiniAlt}
               className="navigation__icon"
             />
             <span className="navigation__text">My Bar</span>
-          </a>
+          </Link>
         </li>
 
         <li className="navigation__item add">
-          <a href="form">
+          <Link to="/form">
             <FontAwesomeIcon
               icon={faPlus}
               className="navigation__icon plusIcon"
             />
             <span className="navigation__text">Create My Cocktail</span>
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

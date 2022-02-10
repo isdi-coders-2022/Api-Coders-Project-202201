@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { H2 } from "../../globalStyles";
 
 const Form = styled.form`
   display: flex;
@@ -24,7 +25,7 @@ const TextArea = styled.textarea`
 const FormMyBarPage = () => {
   return (
     <>
-      <h2>Create a cocktail</h2>
+      <H2>Create a cocktail</H2>
 
       <Form autoComplete="off" novalidate>
         <Label forhtml="name" className="form-label">

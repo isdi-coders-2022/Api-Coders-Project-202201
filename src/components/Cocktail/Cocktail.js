@@ -17,12 +17,12 @@ const CocktailCard = styled.li`
   justify-content: space-between;
 `;
 
-const Title = styled.h2`
+const Title = styled.h3`
   color: white;
-  font-size: 36px;
-  font-family: Roboto;
+  font-size: 28px;
+  font-family: Arial;
   padding-left: 20px;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
   margin: 0;
 `;
 

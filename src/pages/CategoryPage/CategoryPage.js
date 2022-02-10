@@ -1,7 +1,9 @@
+import { H2 } from "../../globalStyles";
+
 const CategoryPage = () => {
   return (
     <div>
-      <h2>Category Page</h2>
+      <H2>Category Page</H2>
     </div>
   );
 };

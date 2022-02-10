@@ -14,8 +14,18 @@
 
   border-top: 1px solid #eaeaea;
   background-color: white;
+  color: black;
 
   box-shadow: 0px 0px 20px 5px #eaeaea;
+  z-index: 100;
+}
+
+a {
+  color: black;
+}
+
+a:visited {
+  color: black;
 }
 
 .navigation__text {

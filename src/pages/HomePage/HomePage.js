@@ -44,7 +44,7 @@ const HomePage = () => {
         <ExploreButton>Let's see</ExploreButton>
         <Image
           className="HomePage__background"
-          src={require("../../images/background-home.jpg")}
+          src="images/background-home.jpg"
           alt="background-cocktails"
         />
       </BackgroundPage>

@@ -48,7 +48,7 @@ const HomePage = () => {
           alt="background-cocktails"
         />
       </BackgroundPage>
-      <h2>Categories</h2>
+      <h2>Cocktails</h2>
     </>
   );
 };

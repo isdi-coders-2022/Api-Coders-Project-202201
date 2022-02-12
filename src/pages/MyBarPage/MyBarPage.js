@@ -16,7 +16,7 @@ const Ul = styled.ul`
 `;
 
 const MyBarPage = () => {
-  const { cocktails } = useContext(CocktailDataContext);
+  const { cocktails, localCocktails } = useContext(CocktailDataContext);
   const { loadLocalCocktailsAPI } = useAPI();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const MyBarPage = () => {
     <>
       <H2>My Bar</H2>
       <Ul>
-        {cocktails.map((cocktail) => (
+        {localCocktails.map((cocktail) => (
           <Cocktail key={cocktail.idDrink} cocktail={cocktail} />
         ))}
       </Ul>

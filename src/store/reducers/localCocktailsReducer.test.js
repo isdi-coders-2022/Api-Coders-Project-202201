@@ -75,4 +75,38 @@ describe("Given a localCocktailsReducr component", () => {
       expect(cocktailsList).toEqual(expectedCocktails);
     });
   });
+
+  describe("When it receives cocktails with 'Martha' and 'Luisa' and an action delete-cocktail with id '1'", () => {
+    test("Then it should return 'Luisa'", () => {
+      const currentCocktails = [
+        {
+          nombre: "Martha",
+          url: "",
+          idDrink: "1",
+        },
+        {
+          nombre: "Luisa",
+          url: "",
+          idDrink: "2",
+        },
+      ];
+
+      const action = {
+        type: "delete-cocktail",
+        id: "1",
+      };
+
+      const expectedCocktails = [
+        {
+          nombre: "Luisa",
+          url: "",
+          idDrink: "2",
+        },
+      ];
+
+      const newCocktails = localCocktailsReducer(currentCocktails, action);
+
+      expect(newCocktails).toEqual(expectedCocktails);
+    });
+  });
 });

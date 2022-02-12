@@ -14,3 +14,8 @@ export const loadLocalCocktailsAction = (cocktails) => ({
   type: actionsTypes.loadLocalCocktails,
   cocktails,
 });
+
+export const deleteCocktailAction = (id) => ({
+  type: actionsTypes.deleteCocktail,
+  id,
+});

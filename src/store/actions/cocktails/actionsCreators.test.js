@@ -1,5 +1,6 @@
 import {
   addCocktailAction,
+  deleteCocktailAction,
   loadCocktailsAction,
   loadLocalCocktailsAction,
 } from "./actionsCreators";
@@ -51,7 +52,7 @@ describe("Given a cocktailsReducer function", () => {
     });
   });
 
-  describe("When it receives 'Marta' and 'Luisa'", () => {
+  describe("When it receives 'Marta' and 'Luisa' and 'load-local-cocktails'", () => {
     test("Then it should return 'Marta' and 'Luisa' objects", () => {
       const cocktails = [
         {
@@ -71,6 +72,21 @@ describe("Given a cocktailsReducer function", () => {
       };
 
       const action = loadLocalCocktailsAction(cocktails);
+
+      expect(action).toEqual(expectedAction);
+    });
+  });
+
+  describe("When it receives 'Marta' and 'Luisa' and 'delete-cocktail'", () => {
+    test("Then it should return 'Marta'", () => {
+      const id = 1;
+
+      const expectedAction = {
+        type: "delete-cocktail",
+        id,
+      };
+
+      const action = deleteCocktailAction(id);
 
       expect(action).toEqual(expectedAction);
     });

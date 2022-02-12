@@ -2,8 +2,6 @@ import Button from "../Button/Button";
 import styled from "styled-components";
 import React from "react";
 
-// import { faStar as starSolid } from "@fortawesome/free-solid-svg-icons";
-
 const CocktailCard = styled.li`
   position: relative;
   overflow: hidden;

@@ -19,11 +19,15 @@ const Ul = styled.ul`
 
 const MyBarPage = () => {
   const { localCocktails } = useContext(CocktailDataContext);
-  const { loadLocalCocktailsAPI } = useAPI();
+  const { loadLocalCocktailsAPI, deleteCocktailApi } = useAPI();
 
   useEffect(() => {
     loadLocalCocktailsAPI();
   }, [loadLocalCocktailsAPI]);
+
+  const deleteCocktailFromFavorites = (idDrink) => {
+    deleteCocktailApi(idDrink);
+  };
 
   return (
     <>
@@ -34,6 +38,9 @@ const MyBarPage = () => {
             key={cocktail.idDrink}
             cocktail={cocktail}
             buttonText={<FontAwesomeIcon icon={starSolid} />}
+            buttonOnClick={() => {
+              deleteCocktailFromFavorites(cocktail.idDrink);
+            }}
           />
         ))}
       </Ul>

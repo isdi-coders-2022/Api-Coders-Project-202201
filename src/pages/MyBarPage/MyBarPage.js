@@ -16,7 +16,7 @@ const Ul = styled.ul`
 `;
 
 const MyBarPage = () => {
-  const { cocktails, localCocktails } = useContext(CocktailDataContext);
+  const { localCocktails } = useContext(CocktailDataContext);
   const { loadLocalCocktailsAPI } = useAPI();
 
   useEffect(() => {

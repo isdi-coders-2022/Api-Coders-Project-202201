@@ -21,7 +21,7 @@ const BackgroundPage = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: 70vh;
+  height: 80vh;
   overflow: hidden;
 `;
 const Image = styled.img`

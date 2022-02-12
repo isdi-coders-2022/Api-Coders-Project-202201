@@ -77,7 +77,7 @@ const CocktailDataContextProvider = ({ children }) => {
 
   const [cocktails, dispatch] = useReducer(cocktailsReducer, []);
 
-  let [localCocktails, localDispatch] = useReducer(localCocktailsReducer, []);
+  const [localCocktails, localDispatch] = useReducer(localCocktailsReducer, []);
 
   return (
     <CocktailDataContext.Provider

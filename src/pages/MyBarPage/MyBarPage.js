@@ -31,9 +31,10 @@ const MyBarPage = () => {
       <Ul>
         {localCocktails.map((cocktail) => (
           <Cocktail
-            buttonText={<FontAwesomeIcon icon={starSolid} />}
             key={cocktail.idDrink}
             cocktail={cocktail}
+            buttonText={<FontAwesomeIcon icon={starSolid} />}
+          />
         ))}
       </Ul>
     </>

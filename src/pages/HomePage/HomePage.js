@@ -74,7 +74,7 @@ const HomePage = () => {
         <ExploreButton>Let's see</ExploreButton>
         <Image
           className="HomePage__background"
-          src="images/background-home.jpg"
+          src="images/background-home.webp"
           alt="background-cocktails"
         />
       </BackgroundPage>

@@ -88,7 +88,6 @@ describe("Given a localCocktailsReducr component", () => {
           nombre: "Luisa",
           url: "",
           idDrink: "2",
-        },
       ];
 
       const action = {

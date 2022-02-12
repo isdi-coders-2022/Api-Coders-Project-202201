@@ -7,6 +7,9 @@ import useAPI from "../../hooks/useApi";
 
 import CocktailDataContext from "../../store/contexts/CocktailDataContext";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-regular-svg-icons";
+
 const ExploreButton = styled.button`
   background-color: #7d4646;
   border: none;
@@ -85,6 +88,7 @@ const HomePage = () => {
           <Cocktail
             key={cocktail.idDrink}
             cocktail={cocktail}
+            buttonText={<FontAwesomeIcon icon={faStar} />}
             buttonOnClick={() => {
               addCocktailToFavorite(cocktail);
             }}

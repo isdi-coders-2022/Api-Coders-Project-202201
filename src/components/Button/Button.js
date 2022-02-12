@@ -7,6 +7,10 @@ const StarButton = styled.button`
   width: 100px;
   border: none;
   font-size: 30px;
+
+  &:active {
+    font-size: 50px;
+  }
 `;
 
 const Button = ({ text, actionOnClick }) => {

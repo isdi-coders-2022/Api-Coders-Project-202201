@@ -4,6 +4,8 @@ import Cocktail from "../../components/Cocktail/Cocktail";
 import { H2 } from "../../globalStyles";
 import useAPI from "../../hooks/useApi";
 import CocktailDataContext from "../../store/contexts/CocktailDataContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar as starSolid } from "@fortawesome/free-solid-svg-icons";
 
 const Ul = styled.ul`
   margin: 0;
@@ -28,7 +30,11 @@ const MyBarPage = () => {
       <H2>My Bar</H2>
       <Ul>
         {cocktails.map((cocktail) => (
-          <Cocktail key={cocktail.idDrink} cocktail={cocktail} />
+          <Cocktail
+            buttonText={<FontAwesomeIcon icon={starSolid} />}
+            key={cocktail.idDrink}
+            cocktail={cocktail}
+          />
         ))}
       </Ul>
     </>

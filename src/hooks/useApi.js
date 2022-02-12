@@ -51,7 +51,17 @@ const useAPI = () => {
     localDispatch(addCocktailAction(cocktail));
   };
 
-  return { loadCocktailsAPI, addCocktailAPI, loadLocalCocktailsAPI };
+  const deleteCocktailApi = async (id) =>
+    fetch(`${localAPI}/${id}`, {
+      method: "DELETE",
+    });
+
+  return {
+    loadCocktailsAPI,
+    addCocktailAPI,
+    loadLocalCocktailsAPI,
+    deleteCocktailApi,
+  };
 };
 
 export default useAPI;

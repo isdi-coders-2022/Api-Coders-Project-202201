@@ -12,6 +12,12 @@ const localCocktailsReducer = (currentCocktails, action) => {
       newCocktails = [...action.cocktails];
       break;
 
+    case actionsTypes.deleteCocktail:
+      newCocktails = currentCocktails.filter(
+        (cocktail) => cocktail.idDrink !== action.id
+      );
+      break;
+
     default:
       newCocktails = [...currentCocktails];
   }

@@ -23,16 +23,13 @@ const useAPI = () => {
     [apiURL, dispatch]
   );
 
-  const loadLocalCocktailsAPI = useCallback(
-    async (url) => {
-      try {
-        const response = await fetch(localAPI);
-        const cocktails = await response.json();
-        dispatch(loadLocalCocktailsAction(cocktails));
-      } catch (error) {}
-    },
-    [localAPI, dispatch]
-  );
+  const loadLocalCocktailsAPI = useCallback(async () => {
+    try {
+      const response = await fetch(localAPI);
+      const cocktails = await response.json();
+      localDispatch(loadLocalCocktailsAction(cocktails));
+    } catch (error) {}
+  }, [localAPI, localDispatch]);
 
   const addCocktailAPI = async (cocktail) => {
     if (
@@ -42,15 +39,16 @@ const useAPI = () => {
     ) {
       return;
     }
-    const response = await fetch(localAPI, {
+
+    const newFavouriteCocktails = [...localCocktails, cocktail];
+
+    await fetch(localAPI, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(cocktail),
+      body: JSON.stringify(newFavouriteCocktails),
     });
 
-    const newCocktail = await response.json();
-
-    localDispatch(addCocktailAction(newCocktail));
+    localDispatch(addCocktailAction(cocktail));
   };
 
   const deleteCocktailApi = async (id) =>

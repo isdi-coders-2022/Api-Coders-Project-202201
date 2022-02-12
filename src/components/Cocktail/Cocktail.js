@@ -32,7 +32,7 @@ const Image = styled.img`
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100vw;
+  width: 100%;
   height: auto;
   z-index: -1;
   filter: brightness(0.7);

@@ -1,8 +1,7 @@
 import Button from "../Button/Button";
 import styled from "styled-components";
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-regular-svg-icons";
+
 // import { faStar as starSolid } from "@fortawesome/free-solid-svg-icons";
 
 const CocktailCard = styled.li`
@@ -49,14 +48,12 @@ const Cocktail = ({
   cocktail: { strDrink, strDrinkThumb },
   buttonOnClick,
   actionCard,
+  buttonText,
 }) => {
   return (
     <CocktailCard onClick={actionCard} className="cocktail-card">
       <ButtonContainer className="button-container">
-        <Button
-          text={<FontAwesomeIcon icon={faStar} />}
-          actionOnClick={buttonOnClick}
-        />
+        <Button text={buttonText} actionOnClick={buttonOnClick} />
       </ButtonContainer>
       <Title className="cocktail__title">{strDrink}</Title>
       <Image className="cocktail__image" src={strDrinkThumb} alt={strDrink} />

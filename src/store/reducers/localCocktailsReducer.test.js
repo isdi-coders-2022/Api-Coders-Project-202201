@@ -1,20 +1,20 @@
-import cocktailsReducer from "./cocktailsReducer";
+import localCocktailsReducer from "./localCocktailsReducer";
 
-describe("Given a cocktailsReducer function", () => {
-  describe("When it receives 'cocktails' with 'Castillian Hot Chocolate' and 'Chocolate Beverage' objects and 'loadCocktailsAction' action", () => {
-    test("Then it should return 'Castillian Hot Chocolate' and 'Chocolate Beverage' objects", () => {
+describe("Given a localCocktailsReducr component", () => {
+  describe("When it receives 'cocktails' with 'Marta' and 'Luisa' objects and 'loadLocalCocktailsAction' action", () => {
+    test("Then it should return 'Marta' and 'Luisa' objects", () => {
       const currentCocktails = [];
 
       const action = {
-        type: "load-cocktails",
+        type: "load-local-cocktails",
         cocktails: [
           {
-            nombre: "Castillian Hot Chocolate",
+            nombre: "Marta",
             url: "",
             id: "1",
           },
           {
-            nombre: "Chocolate Beverage",
+            nombre: "Luisa",
             url: "",
             id: "2",
           },
@@ -23,18 +23,18 @@ describe("Given a cocktailsReducer function", () => {
 
       const expectedCocktails = [
         {
-          nombre: "Castillian Hot Chocolate",
+          nombre: "Marta",
           url: "",
           id: "1",
         },
         {
-          nombre: "Chocolate Beverage",
+          nombre: "Luisa",
           url: "",
           id: "2",
         },
       ];
 
-      const cocktailsList = cocktailsReducer(currentCocktails, action);
+      const cocktailsList = localCocktailsReducer(currentCocktails, action);
 
       expect(cocktailsList).toEqual(expectedCocktails);
     });
@@ -70,7 +70,7 @@ describe("Given a cocktailsReducer function", () => {
         },
       ];
 
-      const cocktailsList = cocktailsReducer(currentCocktails, action);
+      const cocktailsList = localCocktailsReducer(currentCocktails, action);
 
       expect(cocktailsList).toEqual(expectedCocktails);
     });

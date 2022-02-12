@@ -18,7 +18,7 @@ const Ul = styled.ul`
 `;
 
 const MyBarPage = () => {
-  const { cocktails } = useContext(CocktailDataContext);
+  const { localCocktails } = useContext(CocktailDataContext);
   const { loadLocalCocktailsAPI } = useAPI();
 
   useEffect(() => {
@@ -29,11 +29,11 @@ const MyBarPage = () => {
     <>
       <H2>My Bar</H2>
       <Ul>
-        {cocktails.map((cocktail) => (
+        {localCocktails.map((cocktail) => (
           <Cocktail
-            buttonText={<FontAwesomeIcon icon={starSolid} />}
             key={cocktail.idDrink}
             cocktail={cocktail}
+            buttonText={<FontAwesomeIcon icon={starSolid} />}
           />
         ))}
       </Ul>

@@ -35,21 +35,17 @@ const useAPI = () => {
   );
 
   const addCocktailAPI = async (cocktail) => {
-    const favouriteCocktails = [...localCocktails, cocktail];
-
-    const filteredFavorite = [
-      ...new Map(
-        favouriteCocktails.map((favoriteCocktail) => [
-          favoriteCocktail.idDrink,
-          favoriteCocktail,
-        ])
-      ).values(),
-    ];
-
+    if (
+      localCocktails.some(
+        (localCocktail) => localCocktail.idDrink === cocktail.idDrink
+      )
+    ) {
+      return;
+    }
     const response = await fetch(localAPI, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(filteredFavorite),
+      body: JSON.stringify(cocktail),
     });
 
     const newCocktail = await response.json();

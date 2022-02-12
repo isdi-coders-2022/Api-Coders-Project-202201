@@ -1,5 +1,6 @@
 import { useReducer, useState } from "react";
 import cocktailsReducer from "../reducers/cocktailsReducer";
+import localCocktailsReducer from "../reducers/localCocktailsReducer";
 import CocktailDataContext from "./CocktailDataContext";
 
 const CocktailDataContextProvider = ({ children }) => {
@@ -76,7 +77,7 @@ const CocktailDataContextProvider = ({ children }) => {
 
   const [cocktails, dispatch] = useReducer(cocktailsReducer, []);
 
-  let [localCocktails, localDispatch] = useReducer(cocktailsReducer, []);
+  let [localCocktails, localDispatch] = useReducer(localCocktailsReducer, []);
 
   return (
     <CocktailDataContext.Provider

@@ -1,10 +1,14 @@
 import actionsTypes from "../actions/cocktails/actionsTypes";
 
-const cocktailsReducer = (currentCocktails, action) => {
+const localCocktailsReducer = (currentCocktails, action) => {
   let newCocktails;
 
   switch (action.type) {
-    case actionsTypes.loadCocktails:
+    case actionsTypes.addCocktail:
+      newCocktails = [...currentCocktails, action.cocktail];
+      break;
+
+    case actionsTypes.loadLocalCocktails:
       newCocktails = [...action.cocktails];
       break;
 
@@ -14,4 +18,4 @@ const cocktailsReducer = (currentCocktails, action) => {
   return newCocktails;
 };
 
-export default cocktailsReducer;
+export default localCocktailsReducer;

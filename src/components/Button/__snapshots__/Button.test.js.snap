@@ -2,6 +2,6 @@
 
 exports[`Given a Button component When it's rendered' Then it should always match this snapshot 1`] = `
 <button
-  className="sc-bdvvtL dZIbqa"
+  className="sc-bdvvtL gkEAVf"
 />
 `;

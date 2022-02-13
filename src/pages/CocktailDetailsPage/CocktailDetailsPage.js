@@ -28,7 +28,7 @@ const DescriptionContainer = styled.div`
   font-size: 15px;
 `;
 
-const CocktailDetails = ({
+const CocktailDetailsPage = ({
   cocktail: { name, imgURL, category, ingredients, measure, instructions },
 }) => {
   return (
@@ -56,4 +56,4 @@ const CocktailDetails = ({
   );
 };
 
-export default CocktailDetails;
+export default CocktailDetailsPage;

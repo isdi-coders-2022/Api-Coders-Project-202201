@@ -1,5 +1,5 @@
-import CocktailDetails from "./CocktailDetails";
 import { render, screen } from "@testing-library/react";
+import CocktailDetailsPage from "./CocktailDetailsPage";
 
 describe("Given a CocktailDetails component", () => {
   describe("When it receives cocktail 'Margarita'", () => {
@@ -13,7 +13,7 @@ describe("Given a CocktailDetails component", () => {
         instructions: "",
       };
 
-      render(<CocktailDetails cocktail={cocktail} />);
+      render(<CocktailDetailsPage cocktail={cocktail} />);
 
       const h1 = screen.queryByRole("heading", { name: "Margarita" });
 
@@ -32,7 +32,7 @@ describe("Given a CocktailDetails component", () => {
         instructions: "",
       };
 
-      render(<CocktailDetails cocktail={cocktail} />);
+      render(<CocktailDetailsPage cocktail={cocktail} />);
       const paragraph = screen.getByText("Category: Alcoholic");
 
       expect(paragraph).toBeInTheDocument();
@@ -50,7 +50,7 @@ describe("Given a CocktailDetails component", () => {
         instructions: "",
       };
 
-      render(<CocktailDetails cocktail={cocktail} />);
+      render(<CocktailDetailsPage cocktail={cocktail} />);
       const alt = screen.queryByAltText("Mary");
 
       expect(alt).toBeInTheDocument();

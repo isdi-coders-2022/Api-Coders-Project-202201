@@ -87,18 +87,3 @@ describe("Given App component", () => {
     });
   });
 });
-
-// Name "Home":
-// <a
-//   href="/home"
-// />
-
-// Name "My Bar":
-// <a
-//   href="/mybar"
-// />
-
-// Name "Create My Cocktail":
-// <a
-//   href="/mybar/new"
-// />

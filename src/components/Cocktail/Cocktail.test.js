@@ -58,7 +58,7 @@ describe("Given a Cocktail component", () => {
 
       render(<Cocktail cocktail={cocktail} actionCard={actionOnClick} />);
 
-      userEvent.click(screen.getByRole("listitem"));
+      userEvent.click(screen.getByRole("img"));
 
       expect(actionOnClick).toHaveBeenCalled();
     });

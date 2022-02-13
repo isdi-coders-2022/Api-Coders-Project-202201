@@ -105,24 +105,4 @@ describe("Given a HomePage component", () => {
       expect(alt).toBeInTheDocument();
     });
   });
-
-  describe("When it's rendered", () => {
-    test("Then it should render list of cocktails with titles '3-Mile Long Island Iced Tea' and '410 Gone'", async () => {
-      render(
-        <CocktailDataContextProvider>
-          <HomePage />
-        </CocktailDataContextProvider>
-      );
-
-      const cocktail1 = await screen.findByRole("heading", {
-        name: "3-Mile Long Island Iced Tea",
-      });
-      const cocktail2 = await screen.findByRole("heading", {
-        name: "410 Gone",
-      });
-
-      expect(cocktail1).toBeInTheDocument();
-      expect(cocktail2).toBeInTheDocument();
-    });
-  });
 });

@@ -40,6 +40,7 @@ const ButtonContainer = styled.div`
   justify-content: flex-end;
   padding-right: 20px;
   padding-top: 20px;
+  z-index: 2;
 `;
 
 const Cocktail = ({
@@ -49,12 +50,17 @@ const Cocktail = ({
   buttonText,
 }) => {
   return (
-    <CocktailCard onClick={actionCard} className="cocktail-card">
+    <CocktailCard className="cocktail-card">
       <ButtonContainer className="button-container">
         <Button text={buttonText} actionOnClick={buttonOnClick} />
       </ButtonContainer>
       <Title className="cocktail__title">{strDrink}</Title>
-      <Image className="cocktail__image" src={strDrinkThumb} alt={strDrink} />
+      <Image
+        onClick={actionCard}
+        className="cocktail__image"
+        src={strDrinkThumb}
+        alt={strDrink}
+      />
     </CocktailCard>
   );
 };

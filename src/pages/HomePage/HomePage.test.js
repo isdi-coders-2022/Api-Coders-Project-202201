@@ -2,6 +2,7 @@ import HomePage from "./HomePage";
 import { render, screen } from "@testing-library/react";
 
 import CocktailDataContextProvider from "../../store/contexts/CocktailDataContextProvider";
+import { BrowserRouter } from "react-router-dom";
 
 describe("Given a HomePage component", () => {
   describe("When it receives 'cocktails' and it's rendered", () => {
@@ -20,14 +21,16 @@ describe("Given a HomePage component", () => {
       ];
 
       render(
-        <CocktailDataContextProvider value={cocktails}>
-          <HomePage />
-        </CocktailDataContextProvider>
+        <BrowserRouter>
+          <CocktailDataContextProvider value={cocktails}>
+            <HomePage />
+          </CocktailDataContextProvider>
+        </BrowserRouter>
       );
       const expectedText =
         "Because everything starts with a drink , explore ours";
 
-      const text = screen.queryByText(expectedText);
+      const text = screen.getByText(expectedText);
 
       expect(text).toBeInTheDocument();
     });
@@ -47,9 +50,11 @@ describe("Given a HomePage component", () => {
       ];
 
       render(
-        <CocktailDataContextProvider value={cocktails}>
-          <HomePage />
-        </CocktailDataContextProvider>
+        <BrowserRouter>
+          <CocktailDataContextProvider value={cocktails}>
+            <HomePage />
+          </CocktailDataContextProvider>
+        </BrowserRouter>
       );
       const button = screen.queryByRole("button", { name: "Let's see" });
 
@@ -71,9 +76,11 @@ describe("Given a HomePage component", () => {
       ];
 
       render(
-        <CocktailDataContextProvider value={cocktails}>
-          <HomePage />
-        </CocktailDataContextProvider>
+        <BrowserRouter>
+          <CocktailDataContextProvider value={cocktails}>
+            <HomePage />
+          </CocktailDataContextProvider>
+        </BrowserRouter>
       );
       const h2 = screen.queryByRole("heading", { name: "Cocktails" });
 
@@ -95,9 +102,11 @@ describe("Given a HomePage component", () => {
       ];
 
       render(
-        <CocktailDataContextProvider value={cocktails}>
-          <HomePage />
-        </CocktailDataContextProvider>
+        <BrowserRouter>
+          <CocktailDataContextProvider value={cocktails}>
+            <HomePage />
+          </CocktailDataContextProvider>
+        </BrowserRouter>
       );
 
       const alt = screen.queryByAltText("background-cocktails");

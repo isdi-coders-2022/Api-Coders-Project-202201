@@ -13,13 +13,12 @@ const CocktailName = styled.h1`
 `;
 
 const ImageContainer = styled.div`
-  width: 100vw;
+  width: 200;
   height: 200px;
-  overflow: hidden;
 `;
 
 const CocktailImage = styled.img`
-  width: 100vw;
+  height: 200px;
 `;
 
 const DescriptionContainer = styled.div`
@@ -28,7 +27,7 @@ const DescriptionContainer = styled.div`
   font-size: 15px;
 `;
 
-const CocktailDetails = ({
+const CocktailDetailsPage = ({
   cocktail: { name, imgURL, category, ingredients, measure, instructions },
 }) => {
   return (
@@ -42,9 +41,7 @@ const CocktailDetails = ({
         />
       </ImageContainer>
       <DescriptionContainer className="description-container">
-        <p className="cocktail-description__category">
-          {`Category: ${category}`}
-        </p>
+        <p className="cocktail-description__category">{`Category: ${category}`}</p>
         <p className="cocktail-description__ingredients">
           Ingredient: {ingredients} {measure}
         </p>
@@ -56,4 +53,4 @@ const CocktailDetails = ({
   );
 };
 
-export default CocktailDetails;
+export default CocktailDetailsPage;

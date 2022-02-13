@@ -19,3 +19,8 @@ export const deleteCocktailAction = (id) => ({
   type: actionsTypes.deleteCocktail,
   id,
 });
+
+export const loadCocktailDetailsAction = (cocktail) => ({
+  type: actionsTypes.loadCocktailDetails,
+  cocktail,
+});

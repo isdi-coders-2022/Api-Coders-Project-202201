@@ -1,4 +1,5 @@
 import { useReducer, useState } from "react";
+import cocktailDetailsReducer from "../reducers/cocktailDetailsReducer";
 import cocktailsReducer from "../reducers/cocktailsReducer";
 import localCocktailsReducer from "../reducers/localCocktailsReducer";
 import CocktailDataContext from "./CocktailDataContext";
@@ -79,6 +80,11 @@ const CocktailDataContextProvider = ({ children }) => {
 
   const [localCocktails, localDispatch] = useReducer(localCocktailsReducer, []);
 
+  const [cocktailDetails, cocktailDetailsDispatch] = useReducer(
+    cocktailDetailsReducer,
+    []
+  );
+
   return (
     <CocktailDataContext.Provider
       value={{
@@ -89,6 +95,8 @@ const CocktailDataContextProvider = ({ children }) => {
         setSearchText,
         localCocktails,
         localDispatch,
+        cocktailDetails,
+        cocktailDetailsDispatch,
       }}
     >
       {children}

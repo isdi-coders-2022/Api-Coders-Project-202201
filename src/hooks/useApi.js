@@ -17,7 +17,7 @@ const useAPI = () => {
   const loadCocktailsAPI = useCallback(
     async (url) => {
       try {
-        const response = await fetch(apiURL + url);
+        const response = await fetch(`${apiURL}${url}`);
         const cocktails = await response.json();
         dispatch(loadCocktailsAction(cocktails.drinks));
       } catch (error) {}

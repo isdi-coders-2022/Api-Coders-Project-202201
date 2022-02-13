@@ -1,7 +1,7 @@
 import { rest } from "msw";
 
 export const handlers = [
-  rest.get(`${process.env.REACT_APP_CATEGORIES}`, (req, res, ctx) => {
+  rest.get("https://www.thecocktaildb.com/api/json/v1/1/", (req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json({

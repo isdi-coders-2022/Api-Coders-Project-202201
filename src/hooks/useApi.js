@@ -1,6 +1,7 @@
 import { useCallback, useContext } from "react";
 import {
   addCocktailAction,
+  deleteCocktailAction,
   loadCocktailsAction,
   loadLocalCocktailsAction,
 } from "../store/actions/cocktails/actionsCreators";
@@ -40,22 +41,25 @@ const useAPI = () => {
       return;
     }
 
-    const newFavouriteCocktails = [...localCocktails, cocktail];
-
-    await fetch(localAPI, {
+    const response = await fetch(localAPI, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newFavouriteCocktails),
+      body: await JSON.stringify(cocktail),
     });
 
-    localDispatch(addCocktailAction(cocktail));
+    const newCocktail = response.json();
+
+    localDispatch(addCocktailAction(newCocktail));
   };
 
-  const deleteCocktailApi = async (id) =>
-    fetch(`${localAPI}/${id}`, {
+  const deleteCocktailApi = async (id) => {
+    const response = await fetch(`${localAPI}/${id}`, {
       method: "DELETE",
     });
-
+    if (response.ok) {
+      localDispatch(deleteCocktailAction(id));
+    }
+  };
   return {
     loadCocktailsAPI,
     addCocktailAPI,

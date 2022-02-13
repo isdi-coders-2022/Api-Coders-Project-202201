@@ -65,6 +65,7 @@ const HomePage = () => {
   }, [searchText, loadCocktailsAPI]);
 
   const addCocktailToFavorite = (cocktail) => {
+    cocktail.id = cocktail.idDrink;
     addCocktailAPI(cocktail);
   };
 

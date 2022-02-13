@@ -27,6 +27,7 @@ const MyBarPage = () => {
 
   const deleteCocktailFromFavorites = (idDrink) => {
     deleteCocktailApi(idDrink);
+    loadLocalCocktailsAPI();
   };
 
   return (
@@ -35,11 +36,11 @@ const MyBarPage = () => {
       <Ul>
         {localCocktails.map((cocktail) => (
           <Cocktail
-            key={cocktail.idDrink}
+            key={cocktail.id}
             cocktail={cocktail}
             buttonText={<FontAwesomeIcon icon={starSolid} />}
             buttonOnClick={() => {
-              deleteCocktailFromFavorites(cocktail.idDrink);
+              deleteCocktailFromFavorites(cocktail.id);
             }}
           />
         ))}

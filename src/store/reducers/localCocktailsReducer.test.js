@@ -1,6 +1,6 @@
 import localCocktailsReducer from "./localCocktailsReducer";
 
-describe("Given a localCocktailsReducr component", () => {
+describe("Given a localCocktailsReducer component", () => {
   describe("When it receives 'cocktails' with 'Marta' and 'Luisa' objects and 'loadLocalCocktailsAction' action", () => {
     test("Then it should return 'Marta' and 'Luisa' objects", () => {
       const currentCocktails = [];

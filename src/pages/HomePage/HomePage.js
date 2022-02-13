@@ -1,14 +1,12 @@
 import { useContext, useEffect } from "react";
-
 import styled from "styled-components";
 import Cocktail from "../../components/Cocktail/Cocktail";
 import { H2 } from "../../globalStyles";
 import useAPI from "../../hooks/useApi";
-
 import CocktailDataContext from "../../store/contexts/CocktailDataContext";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const ExploreButton = styled.button`
   background-color: #7d4646;
@@ -56,7 +54,7 @@ const Ul = styled.ul`
 `;
 
 const HomePage = () => {
-  const { loadCocktailsAPI, addCocktailAPI } = useAPI();
+  const { loadCocktailsAPI, addCocktailAPI, loadCocktailDetailsAPI } = useAPI();
 
   const { searchText, cocktails } = useContext(CocktailDataContext);
 
@@ -67,6 +65,13 @@ const HomePage = () => {
   const addCocktailToFavorite = (cocktail) => {
     cocktail.id = cocktail.idDrink;
     addCocktailAPI(cocktail);
+  };
+
+  let navigate = useNavigate();
+
+  const seeCocktailDetails = (cocktail) => {
+    loadCocktailDetailsAPI(cocktail.idDrink);
+    navigate(`/home/view/${cocktail.idDrink}`);
   };
 
   return (
@@ -92,6 +97,10 @@ const HomePage = () => {
             buttonText={<FontAwesomeIcon icon={faStar} />}
             buttonOnClick={() => {
               addCocktailToFavorite(cocktail);
+            }}
+            actionCard={(event) => {
+              event.preventDefault();
+              seeCocktailDetails(cocktail);
             }}
           />
         ))}

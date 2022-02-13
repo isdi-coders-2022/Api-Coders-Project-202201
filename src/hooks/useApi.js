@@ -8,15 +8,16 @@ import {
 import CocktailDataContext from "../store/contexts/CocktailDataContext";
 
 const useAPI = () => {
-  const apiURL = process.env.REACT_APP_CATEGORIES;
-  let { dispatch, localDispatch, localCocktails } =
+  const apiURL = `${process.env.REACT_APP_CATEGORIES}`;
+  const localAPI = `${process.env.REACT_APP_LOCALAPI}`;
+
+  const { dispatch, localDispatch, localCocktails } =
     useContext(CocktailDataContext);
-  const localAPI = process.env.REACT_APP_LOCALAPI;
 
   const loadCocktailsAPI = useCallback(
     async (url) => {
       try {
-        const response = await fetch(apiURL + url);
+        const response = await fetch(`${apiURL}${url}`);
         const cocktails = await response.json();
         dispatch(loadCocktailsAction(cocktails.drinks));
       } catch (error) {}

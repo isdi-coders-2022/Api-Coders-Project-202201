@@ -33,7 +33,7 @@ const CocktailDataContextProvider = ({ children }) => {
       id: 5,
       name: "Cocoa",
       altName: "Cocoa",
-      src: "http://unsobered.com/wp-content/uploads/2019/12/cocoa-cocktails.3.jpg",
+      src: "https://unsobered.com/wp-content/uploads/2019/12/cocoa-cocktails.3.jpg",
     },
     {
       id: 6,

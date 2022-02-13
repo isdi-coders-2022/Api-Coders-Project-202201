@@ -45,7 +45,7 @@ const useAPI = () => {
     const response = await fetch(localAPI, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: await JSON.stringify(cocktail),
+      body: JSON.stringify(cocktail),
     });
 
     const newCocktail = response.json();

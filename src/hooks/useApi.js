@@ -2,6 +2,7 @@ import { useCallback, useContext } from "react";
 import {
   addCocktailAction,
   deleteCocktailAction,
+  loadCocktailDetailsAction,
   loadCocktailsAction,
   loadLocalCocktailsAction,
 } from "../store/actions/cocktails/actionsCreators";
@@ -11,7 +12,7 @@ const useAPI = () => {
   const apiURL = `${process.env.REACT_APP_CATEGORIES}`;
   const localAPI = `${process.env.REACT_APP_LOCALAPI}`;
 
-  const { dispatch, localDispatch, localCocktails } =
+  const { dispatch, localDispatch, localCocktails, cocktailDetailsDispatch } =
     useContext(CocktailDataContext);
 
   const loadCocktailsAPI = useCallback(
@@ -61,11 +62,24 @@ const useAPI = () => {
       localDispatch(deleteCocktailAction(id));
     }
   };
+
+  const loadCocktailDetailsAPI = useCallback(
+    async (endPoint) => {
+      try {
+        const response = await fetch(`${apiURL}lookup.php?i=${endPoint}`);
+        const cocktail = await response.json();
+        cocktailDetailsDispatch(loadCocktailDetailsAction(cocktail.drinks[0]));
+      } catch (error) {}
+    },
+    [apiURL, cocktailDetailsDispatch]
+  );
+
   return {
     loadCocktailsAPI,
     addCocktailAPI,
     loadLocalCocktailsAPI,
     deleteCocktailApi,
+    loadCocktailDetailsAPI,
   };
 };
 
